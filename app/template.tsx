@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { Analytics } from "@vercel/analytics/react";
 import { Fragment, ReactNode, useEffect } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { ConstructionModal } from "@/components/shared/construction-modal";
 
 export default function Template({
   children,
@@ -84,6 +85,7 @@ export default function Template({
     <Fragment>
       <SpeedInsights />
       <Analytics />
+      <ConstructionModal />
       <NextTopLoader color="hsl(var(--primary))" showSpinner={false} />
       <Fragment>{children}</Fragment>
     </Fragment>
