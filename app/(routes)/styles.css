@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  button,
+  a,
+  input,
+  textarea,
+  select {
+    @apply md:!cursor-none;
+  }
+}

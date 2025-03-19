@@ -3,28 +3,48 @@ import localFont from "next/font/local";
 export const fontSans = localFont({
   src: [
     {
-      path: "./RebondGrotesque/ESRebondGrotesqueTRIAL-Thin.otf",
+      path: "./AlbertSans/AlbertSans-Thin.ttf",
       weight: "100",
       style: "normal",
     },
     {
-      path: "./RebondGrotesque/ESRebondGrotesqueTRIAL-Light.otf",
+      path: "./AlbertSans/AlbertSans-ExtraLight.ttf",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "./AlbertSans/AlbertSans-Light.ttf",
       weight: "300",
       style: "normal",
     },
     {
-      path: "./RebondGrotesque/ESRebondGrotesqueTRIAL-Regular.otf",
+      path: "./AlbertSans/AlbertSans-Regular.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "./RebondGrotesque/ESRebondGrotesqueTRIAL-Medium.otf",
+      path: "./AlbertSans/AlbertSans-Medium.ttf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "./RebondGrotesque/ESRebondGrotesqueTRIAL-Bold.otf",
+      path: "./AlbertSans/AlbertSans-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "./AlbertSans/AlbertSans-Bold.ttf",
       weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./AlbertSans/AlbertSans-ExtraBold.ttf",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "./AlbertSans/AlbertSans-Black.ttf",
+      weight: "900",
       style: "normal",
     },
   ],
@@ -34,51 +54,25 @@ export const fontSans = localFont({
 export const fontSerif = localFont({
   src: [
     {
-      path: "./Signifier/Signifier-Regular.otf",
+      path: "./Lora/Lora-Regular.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "./Signifier/Signifier-Medium.otf",
+      path: "./Lora/Lora-Medium.ttf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "./Signifier/Signifier-Bold.otf",
-      weight: "700",
-      style: "normal",
-    },
-    {
-      path: "./Signifier/Signifier-Black.otf",
-      weight: "900",
-      style: "normal",
-    },
-  ],
-  variable: "--font-serif",
-});
-
-export const fontLogo = localFont({
-  src: [
-    {
-      path: "./Caveat/Caveat-Regular.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "./Caveat/Caveat-Medium.ttf",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "./Caveat/Caveat-SemiBold.ttf",
+      path: "./Lora/Lora-SemiBold.ttf",
       weight: "600",
       style: "normal",
     },
     {
-      path: "./Caveat/Caveat-Bold.ttf",
+      path: "./Lora/Lora-Bold.ttf",
       weight: "700",
       style: "normal",
     },
   ],
-  variable: "--font-logo",
+  variable: "--font-serif",
 });
