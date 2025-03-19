@@ -23,7 +23,7 @@
     "cms"
   ],
   "scripts": {
-    "dev": "rm -rf .next && clear && next dev & npx next-video sync -w",
+    "dev": "clear && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
