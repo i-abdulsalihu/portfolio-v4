@@ -43,6 +43,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.4.7",
     "lucide-react": "^0.475.0",
+    "motion-plus": "^0.1.6",
     "next": "15.1.7",
     "next-sanity": "^9.8.59",
     "nextjs-toploader": "^3.7.15",
