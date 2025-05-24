@@ -1,81 +1,88 @@
-type ImageResponseProp = {
-  asset: {
-    url: string;
-  };
-};
+declare type tImageModal = { active: boolean; index: number };
 
-type ProjectPropType = {
-  publishedAt: string;
-  _id: string;
-  banner: {
-    _type: string;
-    asset: {
-      _type: string;
-      _ref: string;
-    };
-  };
-  descriptions: string;
-  featured: boolean;
-  categories: {
-    _id: string;
-    category: string;
-    slug: string;
-  }[];
-  links: {
-    repo?: string;
-    live?: string;
-  };
-  title: string;
-  slug: string;
-  snapshots: {
-    _key: string;
-    asset: {
-      _ref: string;
-      _type: string;
-    };
-    _type: string;
-    alt: string;
-  }[];
-};
-
-type SharedFieldsType = {
-  _id: string;
-  title: string;
-  description: string;
-  fromDate?: string;
-  toDate?: string;
-  keyPoints?: string[];
-};
-
-type IHeadingProps = {
-  title: React.ReactElement;
+declare interface HeadingProps {
   subtitle?: string;
-  cn?: string;
-  isReversed?: boolean;
-  path?: string;
-};
+  description?: string;
+  title: ReactElement | string;
+  back?: boolean;
+}
 
-type SharedFieldProps = {
+declare interface SubheadingProps {
+  subtitle?: string;
+  title: ReactElement | string;
+  path?: string;
+}
+
+declare interface SharedFieldProps {
   title: string;
   limit?: number;
   type: "experiences" | "educations" | "initiatives";
   path?: string;
   subtitle?: string;
+}
+
+declare type tProjectProps = {
+  title: string;
+  slug: string;
+  featured: boolean;
+  createdAt: string;
+  url?: {
+    github?: string | null;
+    website?: string | null;
+  };
+  src: string;
+  descriptions: string[];
+  categories: string[];
 };
 
-type StackProps = {
+declare interface InventoryProps {
+  label: string;
+  description?: string;
+  icon?: string;
+  url?: string;
+  category: string;
+}
+
+declare interface StackInventoryProps {
+  category: string;
+  stacks: TechStackProps[];
+}
+
+declare interface ProjectUrl {
+  github?: string;
+  website?: string;
+}
+
+declare interface SanityImageAsset {
+  _type: "image";
+  _key?: string;
+  asset: {
+    _type: "reference";
+    _ref: string;
+  };
+  alt?: string;
+}
+
+declare interface CategoryReference {
+  _type: "reference";
+  _ref: string;
+  _key?: string;
+  category: string;
+}
+
+declare interface ProjectProps {
   _id: string;
-  name: string;
-  techItems: {
-    _key: string;
-    name: string;
-    url: string;
-    icon: {
-      asset: {
-        _ref: string;
-        _type: string;
-      };
-      _type: string;
-    };
-  }[];
-};
+  _type: "projects";
+  title: string;
+  slug: {
+    _type: "slug";
+    current: string;
+  };
+  featured: boolean;
+  publishedAt: string;
+  url: ProjectUrl;
+  descriptions: string[];
+  categories: CategoryReference[];
+  src: SanityImageAsset;
+  snapshots: SanityImageAsset[];
+}
