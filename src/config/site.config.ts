@@ -1,15 +1,18 @@
 export const siteConfig = {
   title: "Abdullahi Salihu",
-  description: "This is my portfolio",
+  description:
+    "Frontend Web3 developer crafting seamless interfaces for decentralized applications. Explore a portfolio of modern design, interactive UX, and blockchain-integrated solutions.",
 
   //? OPEN GRAPH METADATA
   ogTitle: "Abdullahi Salihu",
-  ogDescription: "This is my portfolio",
+  ogDescription:
+    "Frontend Web3 developer crafting seamless interfaces for decentralized applications. Explore a portfolio of modern design, interactive UX, and blockchain-integrated solutions.",
 
   //? TWITTER METADATA
-  tCard: "summary_large_image", // app, player, summary, summary_large_image
+  tCard: "summary_large_image",
   tTitle: "Abdullahi Salihu",
-  tDescription: "This is my portfolio",
+  tDescription:
+    "Frontend Web3 developer crafting seamless interfaces for decentralized applications. Explore a portfolio of modern design, interactive UX, and blockchain-integrated solutions.",
 
   url: process.env.NEXT_PUBLIC_SITE_URL,
   favicon: "/images/logo-white-tb.png",
