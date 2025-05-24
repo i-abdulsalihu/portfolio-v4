@@ -3,24 +3,25 @@ import { contactFormSchema } from "@/lib/validators";
 import type { NextRequest } from "next/server";
 import nodemailer from "nodemailer";
 
-const gmailHost = assertValue(
-  process.env.GMAIL_HOST,
-  "Missing env: GMAIL_HOST",
-);
-const gmailUser = assertValue(
-  process.env.GMAIL_USER,
-  "Missing env: GMAIL_USER",
-);
-const gmailPass = assertValue(
-  process.env.GMAIL_PASS,
-  "Missing env: GMAIL_PASS",
-);
-const mailtrap = assertValue(
-  process.env.DEMO_MAILTRAP,
-  "Missing env: GMAIL_PASS",
-);
 
 export async function POST(req: NextRequest) {
+  const gmailHost = assertValue(
+    process.env.GMAIL_HOST,
+    "Missing env: GMAIL_HOST",
+  );
+  const gmailUser = assertValue(
+    process.env.GMAIL_USER,
+    "Missing env: GMAIL_USER",
+  );
+  const gmailPass = assertValue(
+    process.env.GMAIL_PASS,
+    "Missing env: GMAIL_PASS",
+  );
+  const mailtrap = assertValue(
+    process.env.DEMO_MAILTRAP,
+    "Missing env: GMAIL_PASS",
+  );
+
   try {
     const body = await req.json();
     const {
