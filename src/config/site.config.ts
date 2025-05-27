@@ -1,18 +1,21 @@
 export const siteConfig = {
   title: "Abdullahi Salihu",
   description:
-    "Frontend Web3 developer crafting seamless interfaces for decentralized applications. Explore a portfolio of modern design, interactive UX, and blockchain-integrated solutions.",
+    "I’m Holiday. I build Web2 & Web3 Frontends that are usable, fast, and seamless.",
 
   //? OPEN GRAPH METADATA
   ogTitle: "Abdullahi Salihu",
+  ogImage: "/opengraph-image.png",
   ogDescription:
-    "Frontend Web3 developer crafting seamless interfaces for decentralized applications. Explore a portfolio of modern design, interactive UX, and blockchain-integrated solutions.",
+    "I’m Holiday. I build Web2 & Web3 Frontends that are usable, fast, and seamless.",
 
   //? TWITTER METADATA
   tCard: "summary_large_image",
   tTitle: "Abdullahi Salihu",
+  twitterImage: "/twitter-image.png",
   tDescription:
-    "Frontend Web3 developer crafting seamless interfaces for decentralized applications. Explore a portfolio of modern design, interactive UX, and blockchain-integrated solutions.",
+    "I’m Holiday. I build Web2 & Web3 Frontends that are usable, fast, and seamless.",
+  twitterHandle: "@i_abdulsalihu",
 
   url: process.env.NEXT_PUBLIC_SITE_URL,
   favicon: "/images/logo-white-tb.png",
