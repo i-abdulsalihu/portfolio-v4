@@ -23,6 +23,7 @@ export function groupStacksByCategory(stacks: InventoryProps[]) {
       label: stack.label,
       description: stack.description,
       icon: stack.icon,
+      iconDark: stack.iconDark,
       url: stack.url,
       category: stack.category,
     });

@@ -39,6 +39,7 @@ declare interface InventoryProps {
   label: string;
   description?: string;
   icon?: string;
+  iconDark?: string;
   url?: string;
   category: string;
 }

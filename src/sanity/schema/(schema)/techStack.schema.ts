@@ -19,7 +19,12 @@ export const techStackSchema = defineType({
     }),
     defineField({
       name: "icon",
-      title: "Image Icon",
+      title: "Image Icon (Light Mode)",
+      type: "image",
+    }),
+    defineField({
+      name: "iconDark",
+      title: "Image Icon (Dark Mode)",
       type: "image",
     }),
     defineField({

@@ -13,7 +13,7 @@ const HomeBanner = () => {
       title={
         <span>
           I&apos;m Abdullahi Salihu, <br className="hidden md:block" /> a
-          frontend developer from Nigeria.
+          Frontend Developer from Nigeria.
         </span>
       }
       actions={

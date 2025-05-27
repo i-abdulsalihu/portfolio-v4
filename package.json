@@ -30,7 +30,7 @@
     "freelance web3 developer"
   ],
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev & npx next-video sync -w",
     "dev::new": "rm -rf .next && next dev",
     "build": "next build",
     "start": "next start",

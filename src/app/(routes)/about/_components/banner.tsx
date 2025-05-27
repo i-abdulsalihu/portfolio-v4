@@ -7,8 +7,7 @@ const AboutBanner = () => {
       subtitle="Info about myself"
       title="Designing Seamless & Scalable Interfaces for Web2 & Web3."
       description="I'm a Frontend Developer passionate about crafting seamless,
-  high-performing web experiences. I focus on building scalable, user-friendly
-  applications that bridge creativity and technology."
+  high-performing web experiences. I build Web2/Web3 Frontend that makes smart contract usable, fast and seamless"
     />
   );
 };

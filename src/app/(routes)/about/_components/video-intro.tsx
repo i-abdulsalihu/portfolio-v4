@@ -1,6 +1,6 @@
 import Video from "next-video";
 
-import demo from "@/videos/get-started.mp4";
+import demo from "../../../../../videos/holiday.mp4";
 import { Wrapper } from "@/components/shared/wrapper";
 import MotionTrigger from "@/components/shared/trigger";
 

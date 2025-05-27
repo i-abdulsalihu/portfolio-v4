@@ -5,7 +5,7 @@ const ProjectsBanner = () => {
     <Hero
       src="/images/project-hero.jpg"
       subtitle="Check out things i've built."
-      title="Where code and design collide — a showcase of my work."
+      title="Where code and design collide — A showcase of my work."
       description="Explore a variety of my projects that demonstrate my experience in developing responsive, interactive, and effective online apps that are visually appealing and solve problems."
     />
   );

@@ -16,7 +16,7 @@ interface HeroProps extends HeadingProps {
 const Hero: FC<HeroProps> = ({ actions, src, ...props }) => {
   return (
     <Fragment>
-      <Wrapper grid className="pt-6 pb-12 sm:pb-16 lg:pt-20 lg:pb-32">
+      <Wrapper grid className="pt-10 pb-12 sm:pb-16 lg:pt-20 lg:pb-32">
         <MotionTrigger
           y={-100}
           custom={1}
