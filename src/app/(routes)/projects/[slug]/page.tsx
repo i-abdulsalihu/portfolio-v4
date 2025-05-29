@@ -66,7 +66,9 @@ export default async function ProjectDetailsPage({
       <div className="from-secondary/50 via-secondary/20 to-background bg-gradient-to-b">
         <Descriptions descriptions={project.descriptions} />
       </div>
-      <Snapshots snapshots={project.snapshots} />
+      {project.snapshots && project.snapshots.length > 0 && (
+        <Snapshots snapshots={project.snapshots} />
+      )}
     </div>
   );
 }

@@ -27,7 +27,10 @@ const Img: FC<ImgProps> = ({
       onError={() => setImgSrc(fallbackSrc)}
       priority
       quality={100}
-      className="origin-center object-cover object-center transition-transform duration-500 ease-in-out group-hover:scale-125"
+      unoptimized={
+        imgSrc.toString().toLowerCase().includes(".gif") ? true : false
+      }
+      className="origin-center object-cover object-center transition-transform duration-700 ease-in-out group-hover:scale-125"
     />
   );
 };

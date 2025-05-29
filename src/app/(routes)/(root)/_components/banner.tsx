@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 const HomeBanner = () => {
   return (
     <Hero
-      src="/images/home-hero.jpg"
+      src="/images/home-hero.GIF"
       subtitle="Hey there! Good to see you."
       title={
         <span>

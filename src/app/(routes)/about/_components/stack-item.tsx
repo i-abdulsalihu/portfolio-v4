@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import Image, { ImageProps } from "next/image";
-import { useMemo, type FC } from "react";
+import { useEffect, useState, type FC } from "react";
 
 import {
   HoverCard,
@@ -14,6 +14,7 @@ import MotionTrigger from "@/components/shared/trigger";
 import { Button } from "@/components/ui/button";
 import { urlFor } from "@/sanity/lib/image";
 import { useIsMobile } from "@/hooks/mobile";
+import { usePathname } from "next/navigation";
 
 interface StackItemProps {
   stack: InventoryProps;
@@ -32,11 +33,15 @@ const ThemeImage: React.FC<ThemeImageProps> = ({
   ...props
 }) => {
   const { resolvedTheme } = useTheme();
+  const pathname = usePathname();
 
-  const imageUrl = useMemo(() => {
+  const [imageUrl, setImageUrl] = useState("/svg/placeholder.svg");
+
+  useEffect(() => {
     const src = resolvedTheme === "dark" && darkSrc ? darkSrc : lightSrc;
-    return src ? urlFor(src).url() : "/svg/placeholder.svg";
-  }, [resolvedTheme, darkSrc, lightSrc]);
+    const url = src ? urlFor(src).url() : "/svg/placeholder.svg";
+    setImageUrl(url);
+  }, [resolvedTheme, pathname, lightSrc, darkSrc]);
 
   return <Image src={imageUrl} alt={alt} {...props} />;
 };

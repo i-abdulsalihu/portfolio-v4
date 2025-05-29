@@ -22,7 +22,7 @@ export default async function Home() {
         path="/about"
         subtitle="Details about myself"
         type="initiatives"
-        limit={2}
+        limit={1}
       />
     </div>
   );

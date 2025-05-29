@@ -19,14 +19,6 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     type: "website",
     siteName: siteConfig.title,
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.ogDescription,
-      },
-    ],
   },
   twitter: {
     card: (siteConfig.tCard ?? "summary_large_image") as
@@ -36,7 +28,6 @@ export const metadata: Metadata = {
       | "app",
     title: siteConfig.tTitle,
     description: siteConfig.tDescription,
-    images: [siteConfig.twitterImage],
     creator: siteConfig.twitterHandle,
     site: siteConfig.twitterHandle,
   },

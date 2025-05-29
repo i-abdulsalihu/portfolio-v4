@@ -14,7 +14,32 @@ export const sharedFieldsSchema = defineType({
       name: "description",
       title: "Description",
       type: "array",
-      of: [{ type: "block" }],
+      of: [
+        {
+          type: "block",
+          marks: {
+            annotations: [
+              {
+                name: "link",
+                type: "object",
+                title: "External Link",
+                fields: [
+                  {
+                    name: "href",
+                    type: "url",
+                    title: "URL",
+                  },
+                  {
+                    name: "blank",
+                    type: "boolean",
+                    title: "Open in new tab",
+                  },
+                ],
+              },
+            ],
+          },
+        },
+      ],
     }),
     defineField({
       name: "fromDate",

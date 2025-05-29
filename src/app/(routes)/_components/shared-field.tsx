@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { PortableText } from "next-sanity";
+import { PortableText, PortableTextMarkComponentProps } from "next-sanity";
 
 import { Wrapper } from "@/components/shared/wrapper";
 import Subheading from "@/app/(routes)/_components/subheading";
@@ -7,6 +7,23 @@ import { sanityFetch } from "@/sanity/lib/live";
 import MotionTrigger from "@/components/shared/trigger";
 import { sharedAboutQuery } from "@/lib/queries";
 import { formatDate } from "@/lib/utils";
+
+const components = {
+  marks: {
+    link: ({ value, children }: PortableTextMarkComponentProps<any>) => {
+      const { href, blank } = value;
+      return (
+        <a
+          href={href}
+          target={blank ? "_blank" : "_self"}
+          rel={blank ? "noopener noreferrer" : undefined}
+        >
+          {children}
+        </a>
+      );
+    },
+  },
+};
 
 const SharedField: FC<SharedFieldProps> = async ({
   title,
@@ -63,7 +80,7 @@ const SharedField: FC<SharedFieldProps> = async ({
             <div className="bg-secondary flex flex-col gap-3 rounded-md p-4 sm:bg-transparent sm:p-0 lg:gap-4">
               <div className="text-sm leading-6 font-normal tracking-wide sm:text-base sm:leading-7">
                 {Array.isArray(description) && (
-                  <PortableText value={description} />
+                  <PortableText value={description} components={components} />
                 )}
               </div>
 

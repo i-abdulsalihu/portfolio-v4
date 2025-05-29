@@ -2,6 +2,7 @@
 
 import { CiGrid31 } from "react-icons/ci";
 import { LuListTree } from "react-icons/lu";
+import { type FC, useState } from "react";
 
 import { Wrapper } from "@/components/shared/wrapper";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -9,7 +10,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ImgModal from "./img-modal";
 import ProjectList from "../../_components/project-list";
 import ProjectCard from "../../_components/project-card";
-import { FC, useState } from "react";
 import MotionTrigger from "@/components/shared/trigger";
 
 const triggers = [

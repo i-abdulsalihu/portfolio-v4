@@ -137,9 +137,11 @@ const NavMenu = () => {
             </p>
             {process.env.NODE_ENV === "development" && (
               <Link href="/studio" target="_blank" className="mt-2">
-                <Button size="lg" className="w-full">
-                  Open Sanity Studio
-                </Button>
+                <SheetClose asChild>
+                  <Button size="lg" className="w-full">
+                    Open Sanity Studio
+                  </Button>
+                </SheetClose>
               </Link>
             )}
           </div>

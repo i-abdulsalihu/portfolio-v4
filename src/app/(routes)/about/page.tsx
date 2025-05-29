@@ -39,24 +39,16 @@ export default async function AboutPage() {
       <div className="from-secondary/50 via-secondary/20 to-background bg-gradient-to-b">
         <VideoIntro />
       </div>
-      <SharedField
-        title="Professional Experience"
-        type="experiences"
-        limit={3}
-      />
+      <SharedField title="Professional Experience" type="experiences" />
       <div className="from-secondary/50 via-secondary/20 to-background bg-gradient-to-b">
         <Inventories
           sortedResponse={sortedResponse}
           title="Stack Inventories"
         />
       </div>
-      <SharedField title="Academic background" type="educations" limit={3} />
+      <SharedField title="Academic background" type="educations" />
       <div className="from-secondary/50 via-secondary/20 to-background bg-gradient-to-b">
-        <SharedField
-          title="Persistent Activities"
-          type="initiatives"
-          limit={3}
-        />
+        <SharedField title="Persistent Activities" type="initiatives" />
       </div>
     </div>
   );

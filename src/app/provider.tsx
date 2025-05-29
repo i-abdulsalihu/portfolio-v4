@@ -9,7 +9,6 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { Toaster } from "@/components/ui/sonner";
-import Cursor from "@/components/shared/cursor";
 import LogoProvider from "@/components/provider/logo.provider";
 import ThemeProvider from "@/components/provider/theme.provider";
 
@@ -50,7 +49,6 @@ const GlobalProvider: FC<GlobalProviderProps> = ({ children }) => {
           showForHashAnchor={false}
         />
         <Toaster richColors />
-        <Cursor />
         <Fragment>{children}</Fragment>
       </LogoProvider>
     </ThemeProvider>
