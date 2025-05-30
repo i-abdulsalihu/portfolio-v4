@@ -71,10 +71,10 @@ const Footer = () => {
                     height={40}
                     priority
                     quality={100}
-                    className="pointer-events-none size-12 select-none sm:size-10"
+                    className="pointer-events-none size-12 rounded-full select-none sm:size-10"
                   />
                 </div>
-                <span className="border-foreground flex h-[26px] items-center justify-center rounded-r-full border pr-2.5 pl-[19px] text-xs font-medium tracking-wide sm:h-6 sm:pr-2 sm:pl-[18px]">
+                <span className="border-foreground flex h-[26px] items-center justify-center rounded-r-lg border pr-2.5 pl-[18px] text-[10px] leading-none font-semibold tracking-wide uppercase sm:h-6 sm:pr-2 sm:pl-[18px] sm:text-[9px]">
                   Follow
                 </span>
               </Link>
