@@ -32,6 +32,36 @@ export const projectSchema = defineType({
       type: "datetime",
     }),
     defineField({
+      name: "descriptions",
+      title: "Descriptions",
+      type: "array",
+      of: [{ type: "text" }],
+    }),
+    defineField({
+      name: "src",
+      title: "Main Image URL",
+      type: "image",
+      fields: [
+        {
+          name: "alt",
+          title: "Alternative Text",
+          type: "string",
+        },
+      ],
+      options: { hotspot: true },
+    }),
+    defineField({
+      name: "snapshots",
+      title: "Snapshots",
+      type: "array",
+      of: [
+        defineArrayMember({
+          type: "image",
+          options: { hotspot: true },
+        }),
+      ],
+    }),
+    defineField({
       name: "url",
       title: "Project URLs",
       type: "object",
@@ -59,12 +89,6 @@ export const projectSchema = defineType({
       ],
     }),
     defineField({
-      name: "descriptions",
-      title: "Descriptions",
-      type: "array",
-      of: [{ type: "text" }],
-    }),
-    defineField({
       name: "categories",
       title: "Categories",
       type: "array",
@@ -74,30 +98,6 @@ export const projectSchema = defineType({
           to: {
             type: "categories",
           },
-        }),
-      ],
-    }),
-    defineField({
-      name: "src",
-      title: "Main Image URL",
-      type: "image",
-      fields: [
-        {
-          name: "alt",
-          title: "Alternative Text",
-          type: "string",
-        },
-      ],
-      options: { hotspot: true },
-    }),
-    defineField({
-      name: "snapshots",
-      title: "Snapshots",
-      type: "array",
-      of: [
-        defineArrayMember({
-          type: "image",
-          options: { hotspot: true },
         }),
       ],
     }),

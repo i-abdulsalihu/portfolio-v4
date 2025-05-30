@@ -38,7 +38,7 @@ const Header = () => {
         duration: 0.35,
         ease: "easeInOut",
       }}
-      className="bg-background/30 sticky inset-x-0 top-0 z-50 h-20 backdrop-blur-3xl sm:h-24 lg:h-32"
+      className="bg-background/50 sticky inset-x-0 top-0 z-50 h-20 backdrop-blur-3xl sm:h-24 lg:h-32"
     >
       <Wrapper className="grid size-full h-full grid-cols-2 gap-6 sm:pt-6 md:pt-8 lg:pt-12">
         <div className="flex items-center">

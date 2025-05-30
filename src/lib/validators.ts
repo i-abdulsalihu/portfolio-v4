@@ -4,9 +4,11 @@ export const contactFormSchema = z.object({
   name: z.string().min(2, {
     message: "Name must be at least 2 characters.",
   }),
-  company: z.string().min(2, {
-    message: "Company must be at least 2 characters",
-  }),
+  company: z
+    .string({
+      invalid_type_error: "Company must be at least 2 characters",
+    })
+    .optional(),
   request: z
     .string()
     .min(5, {

@@ -15,7 +15,7 @@ const BannerArrow = () => {
           duration: 0.4,
           scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
         }}
-        className="bg-background absolute top-1/2 left-1/2 size-[74px] -translate-x-1/2 -translate-y-1/2 rounded-full border p-1.5 sm:size-[84px] md:p-2 dark:border-transparent"
+        className="bg-background absolute top-1/2 left-1/2 size-[74px] -translate-x-1/2 -translate-y-1/2 rounded-full p-1.5 shadow sm:size-[84px] md:p-2"
       >
         <motion.div
           initial={{ opacity: 0, scale: 0 }}

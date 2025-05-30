@@ -95,7 +95,7 @@ const ImgModal: FC<ImgModalProps> = ({ modal, projects }) => {
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
-        className="bg-popover/40 pointer-events-none absolute flex h-[350px] w-[400px] items-center justify-center overflow-hidden rounded-2xl border shadow-2xl backdrop-blur-sm will-change-transform"
+        className="pointer-events-none absolute flex h-[350px] w-[400px] items-center justify-center overflow-hidden rounded-2xl border shadow-2xl backdrop-blur-md will-change-transform dark:backdrop-blur-xl"
       >
         <div
           style={{ top: index * -100 + "%" }}

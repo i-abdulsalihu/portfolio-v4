@@ -18,9 +18,11 @@ export default async function ProjectsPage() {
   return (
     <div className="h-full">
       <ProjectsBanner />
-      <div className="from-secondary/50 via-secondary/20 to-background bg-gradient-to-b">
-        <Display projects={projects} />
-      </div>
+      {projects && projects.length > 0 && (
+        <div className="from-secondary/50 via-secondary/20 to-background bg-gradient-to-b">
+          <Display projects={projects} />
+        </div>
+      )}
     </div>
   );
 }

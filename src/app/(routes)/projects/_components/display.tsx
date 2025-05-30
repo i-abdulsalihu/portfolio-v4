@@ -11,6 +11,7 @@ import ImgModal from "./img-modal";
 import ProjectList from "../../_components/project-list";
 import ProjectCard from "../../_components/project-card";
 import MotionTrigger from "@/components/shared/trigger";
+import { useActiveTabStore } from "@/lib/store";
 
 const triggers = [
   {
@@ -30,6 +31,9 @@ interface DisplayProps {
 }
 
 const Display: FC<DisplayProps> = ({ projects }) => {
+  const activeTab = useActiveTabStore((state) => state.activeTab);
+  const setActiveTab = useActiveTabStore((state) => state.setActiveTab);
+
   const [imageModal, setImageModal] = useState<tImageModal>({
     active: false,
     index: 0,
@@ -37,7 +41,12 @@ const Display: FC<DisplayProps> = ({ projects }) => {
 
   return (
     <Wrapper className="border-b py-12 md:py-16 lg:py-20">
-      <Tabs defaultValue="list" className="hidden md:block">
+      <Tabs
+        value={activeTab}
+        defaultValue={activeTab}
+        className="hidden md:block"
+        onValueChange={(val) => setActiveTab(val as "list" | "grid")}
+      >
         <MotionTrigger y={10}>
           <TabsList className="border dark:border-transparent">
             {triggers.map((trigger, index) => (

@@ -30,8 +30,7 @@
     "freelance web3 developer"
   ],
   "scripts": {
-    "dev": "next dev & npx next-video sync -w",
-    "dev::new": "rm -rf .next && next dev",
+    "dev": "next dev && npx next-video sync",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -75,6 +74,7 @@
     "react-icons": "^5.5.0",
     "react-intersection-observer": "^9.16.0",
     "sanity": "3",
+    "sanity-plugin-vimeo-field": "^1.0.1",
     "slugify": "^1.6.6",
     "sonner": "^2.0.3",
     "styled-components": "6",

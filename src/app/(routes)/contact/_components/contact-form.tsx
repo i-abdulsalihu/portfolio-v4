@@ -24,28 +24,28 @@ import { ContactFormSchemaProps, contactFormSchema } from "@/lib/validators";
 const formFields = [
   {
     name: "name",
-    label: "What’s your name?",
+    label: "What’s your name? *",
     placeholder: "Enter your full name",
     type: "text",
     element: Input,
   },
   {
     name: "company",
-    label: "Which company or organization are you reaching out from?",
-    placeholder: "Company or organization name",
+    label: "Which organization are you reaching out from?",
+    placeholder: "Company or Organization name ( optional )",
     type: "text",
     element: Input,
   },
   {
     name: "request",
-    label: "What do you need help with?",
+    label: "What do you need help with? *",
     placeholder: "Briefly describe your request",
     type: "text",
     element: Textarea,
   },
   {
     name: "email",
-    label: "What’s the best email to reach you at?",
+    label: "What’s the best email to reach you at? *",
     placeholder: "Enter your email",
     type: "email",
     element: Input,
@@ -77,12 +77,22 @@ const ContactForm = () => {
         },
       });
 
-      if (!res.ok) throw new Error("Failed to send email");
+      if (!res.ok) {
+        const { message, error } = await res.json().catch((error) => ({
+          message: "Unknown error",
+          error: error,
+        }));
+
+        console.error("Submission failed:", error || message);
+        throw new Error(message || "Failed to send email");
+      }
 
       toast.success("Dōmo arigatōgozaimasu 😁");
-      form.reset();
-    } catch {
-      toast.error("Email failed");
+      // form.reset();
+    } catch (err) {
+      console.log(err);
+      const message = err instanceof Error ? err.message : "Email failed";
+      toast.error(message);
     }
   }
 
@@ -109,7 +119,9 @@ const ContactForm = () => {
                 name={formField.name as keyof ContactFormSchemaProps}
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{formField.label}</FormLabel>
+                    <FormLabel className="underline">
+                      {formField.label}
+                    </FormLabel>
                     <FormControl>
                       <formField.element
                         {...field}
