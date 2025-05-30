@@ -77,7 +77,7 @@ const SharedField: FC<SharedFieldProps> = async ({
                 </p>
               )}
             </div>
-            <div className="bg-secondary flex flex-col gap-3 rounded-md p-4 sm:bg-transparent sm:p-0 lg:gap-4">
+            <div className="bg-secondary flex flex-col gap-3 rounded-xl p-4 sm:bg-transparent sm:p-0 lg:gap-4">
               <div className="text-sm leading-6 font-normal tracking-wide sm:text-base sm:leading-7">
                 {Array.isArray(description) && (
                   <PortableText value={description} components={components} />

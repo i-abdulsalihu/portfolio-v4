@@ -5,6 +5,9 @@ import Logo from "./logo";
 import { Wrapper } from "./wrapper";
 import { siteConfig } from "@/config/site.config";
 import MotionTrigger from "./trigger";
+import { Fragment } from "react";
+import { Separator } from "../ui/separator";
+// import { Button } from "../ui/button";
 
 const footerLinks = [
   {
@@ -42,43 +45,45 @@ const footerLinks = [
 const Footer = () => {
   return (
     <footer className="flex flex-col">
-      <Wrapper className="grid grid-cols-1 gap-6 !py-10 md:grid-cols-2">
+      <Wrapper className="grid grid-cols-1 gap-4 py-8 sm:!py-10 md:grid-cols-2">
         <div className="flex items-center justify-center md:justify-start">
           <Link
             href="/"
             className="size-max md:-ml-2"
             title={`Logo - ${siteConfig.title}`}
           >
-            <Logo />
+            <Logo className="!size-16 sm:size-10" />
           </Link>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 sm:gap-y-2 md:justify-end">
+        <div className="flex flex-wrap items-center justify-center md:justify-end">
           {footerLinks.map((link, index) => (
-            <MotionTrigger y={10} custom={index} key={link.label}>
-              <Link
-                target="_blank"
-                href={link.url}
-                title={link.title}
-                className="group flex cursor-pointer items-center"
-                data-cursor="pointer"
-              >
-                <div className="z-10 -mr-4">
+            <Fragment key={link.label}>
+              <MotionTrigger y={10} custom={index}>
+                <Link
+                  target="_blank"
+                  href={link.url}
+                  title={link.title}
+                  className="group flex cursor-pointer items-center"
+                  data-cursor="pointer"
+                >
                   <Image
                     src={link.icon}
                     alt={link.title}
-                    width={40}
-                    height={40}
+                    width={44}
+                    height={44}
                     priority
                     quality={100}
-                    className="pointer-events-none size-12 rounded-full select-none sm:size-10"
+                    className="pointer-events-none size-12 select-none sm:size-11"
                   />
-                </div>
-                <span className="border-foreground flex h-[26px] items-center justify-center rounded-r-lg border pr-2.5 pl-[18px] text-[10px] leading-none font-semibold tracking-wide uppercase sm:h-6 sm:pr-2 sm:pl-[18px] sm:text-[9px]">
-                  Follow
-                </span>
-              </Link>
-            </MotionTrigger>
+                </Link>
+              </MotionTrigger>
+
+              <Separator
+                orientation="vertical"
+                className="mx-2 !h-4 w-px last-of-type:hidden"
+              />
+            </Fragment>
           ))}
         </div>
       </Wrapper>
@@ -87,11 +92,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-// <Link href={link.url} title={link.title} target="_blank">
-//   <Button variant={"link"} className="size-max gap-1 p-0">
-//     <span className="text-xs font-medium tracking-wide uppercase">
-//       {link.label}
-//     </span>
-//   </Button>
-// </Link>
