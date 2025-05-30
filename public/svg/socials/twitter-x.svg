@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1500" viewBox="0 0 1500 1500" id="twitter-x">
+  <defs>
+    <linearGradient id="linear-gradient" x1=".854" x2=".138" y1=".861" y2=".189" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#121212"></stop>
+      <stop offset="1" stop-color="#5f5f5f"></stop>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1=".143" x2=".823" y1=".172" y2=".886" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#2e2e2e"></stop>
+      <stop offset="1" stop-color="#464646"></stop>
+    </linearGradient>
+    <clipPath id="clip-X">
+      <rect width="1500" height="1500"></rect>
+    </clipPath>
+    <filter id="Ellipse_2" width="1078" height="1078" x="211" y="221" filterUnits="userSpaceOnUse">
+      <feOffset dy="10"></feOffset>
+      <feGaussianBlur result="blur" stdDeviation="20"></feGaussianBlur>
+      <feFlood flood-opacity=".173"></feFlood>
+      <feComposite in2="blur" operator="in"></feComposite>
+      <feComposite in="SourceGraphic"></feComposite>
+    </filter>
+  </defs>
+  <g id="X" clip-path="url(#clip-X)">
+    <circle id="Ellipse_1" cx="621" cy="621" r="621" fill="url(#linear-gradient)" transform="translate(129 129)"></circle>
+    <g filter="url(#Ellipse_2)">
+      <circle id="Ellipse_2-2" cx="479" cy="479" r="479" fill="url(#linear-gradient-2)" transform="translate(271 271)"></circle>
+    </g>
+    <path id="Path_1" fill="#fff" d="M495.208,415.138l174.334-202.65H628.231L476.856,388.446l-120.9-175.958H216.508L399.336,478.567,216.508,691.076h41.313L417.677,505.258,545.358,691.076H684.805L495.2,415.138Zm-56.585,65.773-18.524-26.5L272.708,243.589h63.456L455.11,413.732l18.524,26.5L628.25,661.39H564.794L438.623,480.922Z" transform="translate(299.796 298.368)"></path>
+  </g>
+</svg>

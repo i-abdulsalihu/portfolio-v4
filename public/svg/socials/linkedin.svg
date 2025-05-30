@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1500" viewBox="0 0 1500 1500" id="linkedin">
+  <defs>
+    <linearGradient id="linear-gradient" x1=".185" x2=".834" y1=".132" y2=".876" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#1a96d6"></stop>
+      <stop offset="1" stop-color="#0c77ae"></stop>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1=".143" x2=".823" y1=".172" y2=".886" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#0a70a5"></stop>
+      <stop offset="1" stop-color="#1d9adb"></stop>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_11" width="448.542" height="447.504" fill="none"></rect>
+    </clipPath>
+    <clipPath id="clip-Linkedin">
+      <rect width="1500" height="1500"></rect>
+    </clipPath>
+    <filter id="Ellipse_1" width="1260" height="1260" x="120" y="123" filterUnits="userSpaceOnUse">
+      <feOffset dy="3"></feOffset>
+      <feGaussianBlur result="blur" stdDeviation="3"></feGaussianBlur>
+      <feFlood flood-opacity=".161"></feFlood>
+      <feComposite in2="blur" operator="in"></feComposite>
+      <feComposite in="SourceGraphic"></feComposite>
+    </filter>
+    <filter id="Ellipse_2" width="1078" height="1078" x="211" y="221" filterUnits="userSpaceOnUse">
+      <feOffset dy="10"></feOffset>
+      <feGaussianBlur result="blur-2" stdDeviation="20"></feGaussianBlur>
+      <feFlood flood-color="#097cb8" flood-opacity=".153"></feFlood>
+      <feComposite in2="blur-2" operator="in"></feComposite>
+      <feComposite in="SourceGraphic"></feComposite>
+    </filter>
+  </defs>
+  <g id="Linkedin" clip-path="url(#clip-Linkedin)">
+    <g filter="url(#Ellipse_1)">
+      <circle id="Ellipse_1-2" cx="621" cy="621" r="621" fill="url(#linear-gradient)" transform="translate(129 129)"></circle>
+    </g>
+    <g filter="url(#Ellipse_2)">
+      <circle id="Ellipse_2-2" cx="479" cy="479" r="479" fill="url(#linear-gradient-2)" transform="translate(271 271)"></circle>
+    </g>
+    <g id="Group_21" transform="translate(526.505 486.714)">
+      <g id="Group_20" clip-path="url(#clip-path)">
+        <path id="Path_12" fill="#fff" d="M7.4,148.555h93.064V447.5H7.4ZM53.947,0A53.878,53.878,0,1,1,0,53.84,53.879,53.879,0,0,1,53.947,0"></path>
+        <path id="Path_13" fill="#fff" d="M94.705,91.6h89.133v40.891h1.22C197.486,108.963,227.8,84.2,273.051,84.2c94.08,0,111.428,61.873,111.428,142.387V390.547H291.621V245.2c0-34.7-.677-79.277-48.294-79.277-48.371,0-55.749,37.762-55.749,76.744V390.547H94.705Z" transform="translate(64.065 56.957)"></path>
+      </g>
+    </g>
+  </g>
+</svg>

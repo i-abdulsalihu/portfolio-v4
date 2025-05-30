@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1500" viewBox="0 0 1500 1500" id="telegram">
+  <defs>
+    <linearGradient id="linear-gradient" x1=".185" x2=".834" y1=".132" y2=".876" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#39b9e5"></stop>
+      <stop offset="1" stop-color="#167c9f"></stop>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1=".143" x2=".823" y1=".172" y2=".886" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#1a80a4"></stop>
+      <stop offset="1" stop-color="#47bae2"></stop>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_8" width="480.224" height="397.076" fill="none"></rect>
+    </clipPath>
+    <clipPath id="clip-Telegram">
+      <rect width="1500" height="1500"></rect>
+    </clipPath>
+    <filter id="Ellipse_2" width="1078" height="1078" x="211" y="221" filterUnits="userSpaceOnUse">
+      <feOffset dy="10"></feOffset>
+      <feGaussianBlur result="blur" stdDeviation="20"></feGaussianBlur>
+      <feFlood flood-color="#30b5e3" flood-opacity=".051"></feFlood>
+      <feComposite in2="blur" operator="in"></feComposite>
+      <feComposite in="SourceGraphic"></feComposite>
+    </filter>
+  </defs>
+  <g id="Telegram" clip-path="url(#clip-Telegram)">
+    <circle id="Ellipse_1" cx="621" cy="621" r="621" fill="url(#linear-gradient)" transform="translate(129 129)"></circle>
+    <g filter="url(#Ellipse_2)">
+      <circle id="Ellipse_2-2" cx="479" cy="479" r="479" fill="url(#linear-gradient-2)" transform="translate(271 271)"></circle>
+    </g>
+    <g id="Group_15" transform="translate(485.855 551.462)">
+      <g id="Group_14" clip-path="url(#clip-path)">
+        <path id="Path_9" fill="#fff" d="M29.441,172.928S241.834,85.761,315.5,55.07c28.236-12.278,124-51.564,124-51.564s44.2-17.187,40.514,24.554c-1.229,17.188-11.05,77.345-20.87,142.413-14.734,92.079-30.694,192.749-30.694,192.749s-2.456,28.238-23.326,33.147-55.248-17.187-61.385-22.1c-4.911-3.682-92.076-58.93-124-85.941-8.595-7.365-18.415-22.1,1.227-39.284,44.2-40.515,96.989-90.85,128.907-122.77,14.734-14.733,29.465-49.108-31.918-7.368C230.785,179.067,144.844,235.54,144.844,235.54S125.2,247.818,88.37,236.768s-79.8-25.782-79.8-25.782-29.463-18.415,20.872-38.059"></path>
+      </g>
+    </g>
+  </g>
+</svg>
