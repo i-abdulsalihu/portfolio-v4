@@ -5,9 +5,6 @@ import Logo from "./logo";
 import { Wrapper } from "./wrapper";
 import { siteConfig } from "@/config/site.config";
 import MotionTrigger from "./trigger";
-import { Fragment } from "react";
-import { Separator } from "../ui/separator";
-// import { Button } from "../ui/button";
 
 const footerLinks = [
   {
