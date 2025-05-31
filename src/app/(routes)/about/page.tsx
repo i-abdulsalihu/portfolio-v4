@@ -48,7 +48,7 @@ export default async function AboutPage() {
       </div>
       <SharedField title="Academic background" type="educations" />
       <div className="from-secondary/50 via-secondary/20 to-background bg-gradient-to-b">
-        <SharedField title="Persistent Activities" type="initiatives" />
+        <SharedField title="Ongoing Initiatives" type="initiatives" />
       </div>
     </div>
   );

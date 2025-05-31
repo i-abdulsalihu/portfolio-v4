@@ -88,19 +88,6 @@ export const projectSchema = defineType({
         }),
       ],
     }),
-    defineField({
-      name: "categories",
-      title: "Categories",
-      type: "array",
-      of: [
-        defineArrayMember({
-          type: "reference",
-          to: {
-            type: "categories",
-          },
-        }),
-      ],
-    }),
   ],
   initialValue: {
     featured: false,

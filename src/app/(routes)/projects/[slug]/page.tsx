@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { redirect } from "next/navigation";
+import { redirect, notFound } from "next/navigation";
 
 import ProjectDetailsBanner from "./_components/banner";
 import Descriptions from "./_components/descriptions";
@@ -58,7 +58,9 @@ export default async function ProjectDetailsPage({
   });
 
   const project: ProjectProps = result.data[0];
-  if (!project) redirect("/projects");
+  if (!project) {
+    notFound();
+  }
 
   return (
     <div className="h-full">

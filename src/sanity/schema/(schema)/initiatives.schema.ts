@@ -5,7 +5,7 @@ import { sharedFieldsSchema } from "../(reusable)/sharedField.schema";
 
 export const initiativeSchema = defineType({
   name: "initiatives",
-  title: "Persistent Activities",
+  title: "Ongoing Initiatives",
   type: "document",
   icon: MdNotificationsActive,
   fields: [...sharedFieldsSchema.fields],

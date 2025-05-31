@@ -58,7 +58,7 @@ const Header = () => {
 
           <div className="ml-auto flex items-center sm:-mr-3">
             <ThemeToggle />
-            <Separator orientation="vertical" className="mr-2 ml-4 !h-4" />
+            <Separator orientation="vertical" className="mx-3 !h-4" />
             <NavMenu />
           </div>
         </div>

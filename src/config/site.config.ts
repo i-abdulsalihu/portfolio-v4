@@ -1,3 +1,10 @@
+import { assertValue } from "@/lib/utils";
+
+const siteUrl = assertValue(
+  process.env.NEXT_PUBLIC_BASE_URL,
+  "Missing environment variable: NEXT_PUBLIC_BASE_URL",
+);
+
 export const siteConfig = {
   title: "Abdullahi Salihu",
   description:
@@ -15,6 +22,6 @@ export const siteConfig = {
     "I’m Holiday. I build Web2 & Web3 Frontends that are usable, fast, and seamless.",
   twitterHandle: "@i_abdulsalihu",
 
-  url: process.env.NEXT_PUBLIC_SITE_URL,
+  url: siteUrl,
   favicon: "/images/logo-white-tb.png",
 };

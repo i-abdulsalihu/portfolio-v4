@@ -87,8 +87,8 @@ const ContactForm = () => {
         throw new Error(message || "Failed to send email");
       }
 
-      toast.success("Dōmo arigatōgozaimasu 😁");
-      // form.reset();
+      toast.success("Message sent successfully!");
+      form.reset();
     } catch (err) {
       console.log(err);
       const message = err instanceof Error ? err.message : "Email failed";
@@ -146,12 +146,12 @@ const ContactForm = () => {
             className="group ml-auto w-max sm:ml-0"
           >
             <Button
-              variant={"outline"}
+              variant={"default"}
               size={"lg"}
               disabled={isSubmitting}
               isLoading={isSubmitting}
-              loadingText="Submitting..."
-              className="group"
+              loadingText="Please hold..."
+              className="group rounded-lg"
             >
               <span className="tracking-wide">Submit Details</span>
               <LuArrowRight className="!size-4 -rotate-45 transition duration-200 group-hover:rotate-0" />

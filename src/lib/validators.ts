@@ -11,11 +11,11 @@ export const contactFormSchema = z.object({
     .optional(),
   request: z
     .string()
-    .min(5, {
-      message: "Request must be at least 5 characters.",
+    .min(10, {
+      message: "Request must be at least 10 characters.",
     })
-    .max(500, {
-      message: "Request must be at most 500 characters.",
+    .max(1000, {
+      message: "Request must be at most 1000 characters.",
     }),
   email: z
     .string({

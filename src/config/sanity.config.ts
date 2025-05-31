@@ -3,7 +3,6 @@
 import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
-import { vimeoField } from "sanity-plugin-vimeo-field";
 
 import { schema } from "@/sanity/schema";
 import { structure } from "@/sanity/structure";
@@ -17,8 +16,5 @@ export default defineConfig({
   plugins: [
     structureTool({ structure }),
     visionTool({ defaultApiVersion: apiVersion }),
-    vimeoField({
-      accessToken: process.env.SANITY_STUDIO_VIMEO_ACCESS_TOKEN,
-    }),
   ],
 });

@@ -64,13 +64,6 @@ declare interface SanityImageAsset {
   alt?: string;
 }
 
-declare interface CategoryReference {
-  _type: "reference";
-  _ref: string;
-  _key?: string;
-  category: string;
-}
-
 declare interface ProjectProps {
   _id: string;
   _type: "projects";
@@ -83,7 +76,6 @@ declare interface ProjectProps {
   publishedAt: string;
   url: ProjectUrl;
   descriptions: string[];
-  categories: CategoryReference[];
   src: SanityImageAsset;
   snapshots: SanityImageAsset[];
 }

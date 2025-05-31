@@ -52,38 +52,31 @@ const Footer = () => {
             className="size-max md:-ml-2"
             title={`Logo - ${siteConfig.title}`}
           >
-            <Logo className="!size-16 sm:size-10" />
+            <Logo className="!size-14 sm:!size-10" />
           </Link>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center md:justify-end">
+        <div className="flex flex-wrap items-center justify-center gap-2 md:justify-end">
           {footerLinks.map((link, index) => (
-            <Fragment key={link.label}>
-              <MotionTrigger y={10} custom={index}>
-                <Link
-                  target="_blank"
-                  href={link.url}
-                  title={link.title}
-                  className="group flex cursor-pointer items-center"
-                  data-cursor="pointer"
-                >
-                  <Image
-                    src={link.icon}
-                    alt={link.title}
-                    width={44}
-                    height={44}
-                    priority
-                    quality={100}
-                    className="pointer-events-none size-12 select-none sm:size-11"
-                  />
-                </Link>
-              </MotionTrigger>
-
-              <Separator
-                orientation="vertical"
-                className="mx-2 !h-4 w-px last-of-type:hidden"
-              />
-            </Fragment>
+            <MotionTrigger y={10} custom={index} key={link.label}>
+              <Link
+                target="_blank"
+                href={link.url}
+                title={link.title}
+                className="group flex cursor-pointer items-center"
+                data-cursor="pointer"
+              >
+                <Image
+                  src={link.icon}
+                  alt={link.title}
+                  width={44}
+                  height={44}
+                  priority
+                  quality={100}
+                  className="pointer-events-none size-12 select-none sm:size-11"
+                />
+              </Link>
+            </MotionTrigger>
           ))}
         </div>
       </Wrapper>

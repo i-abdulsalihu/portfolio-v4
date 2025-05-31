@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import Image, { ImageProps } from "next/image";
 import { useState, useEffect, FC } from "react";
 
@@ -11,6 +12,7 @@ const Img: FC<ImgProps> = ({
   src,
   alt,
   fallbackSrc = "/svg/placeholder.svg",
+  className,
   ...props
 }) => {
   const [imgSrc, setImgSrc] = useState(src);
@@ -30,7 +32,10 @@ const Img: FC<ImgProps> = ({
       unoptimized={
         imgSrc.toString().toLowerCase().includes(".gif") ? true : false
       }
-      className="origin-center object-cover object-center transition-transform duration-700 ease-in-out group-hover:scale-125"
+      className={cn(
+        "origin-center object-cover object-center transition-all duration-700 ease-in-out group-hover:scale-125",
+        className,
+      )}
     />
   );
 };

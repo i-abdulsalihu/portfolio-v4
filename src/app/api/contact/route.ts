@@ -47,8 +47,8 @@ export async function POST(req: NextRequest) {
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;max-width:600px;margin:0 auto;line-height:1.6;color:#333;background-color:#fff;">
       <div style="background-color:#f8f9fa;padding:20px 16px;border-bottom:2px solid #007bff;">
-        <h1 style="margin:0;font-size:24px;font-weight:bold;color:#007bff;">Someone just reached out</h1>
-        <p style="margin:1px 0 0 0;font-size:14px;color:#666;">
+        <h1 style="margin:0;font-size:18px;font-weight:bold;color:#007bff;">Someone just reached out</h1>
+        <p style="margin:0;font-size:14px;color:#666;">
           Received on ${new Date().toLocaleDateString("en-US", {
             weekday: "long",
             year: "numeric",
@@ -85,7 +85,7 @@ export async function POST(req: NextRequest) {
         <div>
           <h3 style="margin:0 0 15px 0;font-size:14px;color:#555;border-bottom:2px solid #007bff;padding-bottom:8px;">Message:</h3>
           <div style="background-color:#f8f9fa;padding:16px;border-radius:4px;border:1px solid #e9ecef;font-size:14px;line-height:1.7;color:#333;">
-            ${message.replace(/\n/g, "<br><br>")}
+            ${message.replace(/\n/g, "<br>")}
           </div>
         </div>
       </div>

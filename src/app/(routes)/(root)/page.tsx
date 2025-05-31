@@ -18,7 +18,7 @@ export default async function Home() {
         <Featured projects={projects} />
       </div>
       <SharedField
-        title="Persistent Activities"
+        title="Ongoing Initiatives"
         path="/about"
         subtitle="Details about myself"
         type="initiatives"
