@@ -16,9 +16,10 @@ declare interface SubheadingProps {
 declare interface SharedFieldProps {
   title: string;
   limit?: number;
-  type: "experiences" | "educations" | "initiatives";
+  type: "experiences" | "educations" | "initiatives" | "achievements";
   path?: string;
   subtitle?: string;
+  documents?: File;
 }
 
 declare type tProjectProps = {

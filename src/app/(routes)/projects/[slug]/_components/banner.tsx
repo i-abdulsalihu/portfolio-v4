@@ -19,7 +19,7 @@ const ProjectDetailsBanner: FC<ProjectDetailsBannerProps> = ({
   return (
     <Hero
       back
-      src={srcUrl as string}
+      src={srcUrl ?? "/src/placeholder.svg"}
       title={title}
       actions={
         <Fragment>

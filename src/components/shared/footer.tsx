@@ -5,6 +5,7 @@ import Logo from "./logo";
 import { Wrapper } from "./wrapper";
 import { siteConfig } from "@/config/site.config";
 import MotionTrigger from "./trigger";
+import Magnet from "./magnet";
 
 const footerLinks = [
   {
@@ -16,7 +17,7 @@ const footerLinks = [
   {
     label: "LinkedIn",
     title: "Connect with me on LinkedIn",
-    url: "https://www.linkedin.com/in/abdullahisalihu/",
+    url: "https://www.linkedin.com/mynetwork/discovery-see-all/?usecase=PEOPLE_FOLLOWS&followMember=abdullahisalihu",
     icon: "/svg/socials/linkedin.svg",
   },
   {
@@ -56,23 +57,25 @@ const Footer = () => {
         <div className="flex flex-wrap items-center justify-center gap-2 md:justify-end">
           {footerLinks.map((link, index) => (
             <MotionTrigger y={10} custom={index} key={link.label}>
-              <Link
-                target="_blank"
-                href={link.url}
-                title={link.title}
-                className="group flex cursor-pointer items-center"
-                data-cursor="pointer"
-              >
-                <Image
-                  src={link.icon}
-                  alt={link.title}
-                  width={44}
-                  height={44}
-                  priority
-                  quality={100}
-                  className="pointer-events-none size-12 select-none sm:size-11"
-                />
-              </Link>
+              <Magnet padding={10} magnetStrength={5}>
+                <Link
+                  target="_blank"
+                  href={link.url}
+                  title={link.title}
+                  className="group flex cursor-pointer items-center"
+                  data-cursor="pointer"
+                >
+                  <Image
+                    src={link.icon}
+                    alt={link.title}
+                    width={44}
+                    height={44}
+                    priority
+                    quality={100}
+                    className="pointer-events-none size-12 select-none sm:size-11"
+                  />
+                </Link>
+              </Magnet>
             </MotionTrigger>
           ))}
         </div>

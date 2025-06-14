@@ -57,5 +57,11 @@ export const sharedFieldsSchema = defineType({
       type: "array",
       of: [{ type: "string" }],
     }),
+    defineField({
+      name: "documents",
+      title: "Documents",
+      type: "array",
+      of: [{ type: "file" }],
+    }),
   ],
 });

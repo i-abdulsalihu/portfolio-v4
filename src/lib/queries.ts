@@ -44,7 +44,7 @@ export const projectQuery = (slug?: string, limit?: number) => {
 };
 
 export const sharedAboutQuery = (
-  type: "experiences" | "educations" | "initiatives",
+  type: SharedFieldProps["type"],
   limit?: number,
 ) => {
   const filter = `_type == "${type}"`;
@@ -56,6 +56,13 @@ export const sharedAboutQuery = (
     toDate,
     description,
     keyPoints,
+    documents[]{
+      _key,
+      asset->{
+        _id,
+        url
+      }
+    },
   }`;
 
   if (limit) {

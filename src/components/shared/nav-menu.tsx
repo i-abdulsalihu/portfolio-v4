@@ -132,14 +132,11 @@ const NavMenu = () => {
             <div className="flex lg:hidden">
               <Region />
             </div>
-            <p className="text-xs font-normal sm:text-sm">
-              © 2025 <b>Abdullahi Salihu</b>. All rights reserved.
-            </p>
             {process.env.NODE_ENV === "development" && (
               <Link href="/studio" target="_blank" className="mt-2">
                 <SheetClose asChild>
                   <Button size="lg" className="w-full">
-                    Open Sanity Studio
+                    Open Sanity CMS
                   </Button>
                 </SheetClose>
               </Link>

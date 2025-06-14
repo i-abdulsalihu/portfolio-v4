@@ -78,7 +78,7 @@ const StackItem: FC<StackItemProps> = ({ stack, index }) => {
 
   if (isMobile) {
     return (
-      <Link href={stack.url ?? "#"} key={index}>
+      <Link href={stack.url ?? "#"} key={index} target={stack.url && "_blank"}>
         {content}
       </Link>
     );

@@ -42,7 +42,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
                 variant={"secondary"}
                 className="rounded-full !bg-white !pl-4 !text-black"
               >
-                <span>Details</span>
+                <span>View</span>
                 <LuArrowRight className="!size-4 -rotate-45 transition duration-200 group-hover:rotate-0" />
               </Button>
             </Link>
