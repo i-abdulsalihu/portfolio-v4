@@ -21,13 +21,13 @@ const Logo: FC<LogoProps> = ({ className }) => {
       <Magnet padding={10} magnetStrength={5}>
         <Img
           src={logo}
-          alt="Abdullahi Salihu"
+          alt={siteConfig.author}
           priority
           width={40}
           height={40}
           quality={100}
           className={cn("size-10", className)}
-          title={`Logo - ${siteConfig.title}`}
+          title={`Logo - ${siteConfig.author}`}
         />
       </Magnet>
     </MotionTrigger>

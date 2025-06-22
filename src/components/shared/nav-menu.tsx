@@ -89,7 +89,7 @@ const NavMenu = () => {
           <SheetClose
             className="w-max"
             asChild
-            title={`Logo - ${siteConfig.title}`}
+            title={`Logo - ${siteConfig.author}`}
           >
             <Logo />
           </SheetClose>

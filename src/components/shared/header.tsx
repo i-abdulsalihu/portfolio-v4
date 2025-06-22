@@ -45,7 +45,7 @@ const Header = () => {
           <Link
             href="/"
             className="size-max sm:-ml-2"
-            title={`Logo - ${siteConfig.title}`}
+            title={`Logo - ${siteConfig.author}`}
           >
             <Logo />
           </Link>

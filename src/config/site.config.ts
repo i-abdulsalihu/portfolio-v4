@@ -26,6 +26,7 @@ export const siteConfig = {
     description:
       "Whether it's product development, technical consultancy, or interface design for dApps (Decentralized Applications), I'm open to new opportunities and challenges.",
   },
+  author: "Abdullahi Salihu",
   url: siteUrl,
   handle: "i_abdulsalihu",
   favicon: "/images/logo-white-tb.png",

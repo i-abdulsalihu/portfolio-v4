@@ -48,7 +48,7 @@ const Footer = () => {
           <Link
             href="/"
             className="size-max md:-ml-2"
-            title={`Logo - ${siteConfig.title}`}
+            title={`Logo - ${siteConfig.author}`}
           >
             <Logo className="!size-14 sm:!size-10" />
           </Link>
