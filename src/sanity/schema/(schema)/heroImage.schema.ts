@@ -9,35 +9,27 @@ export const heroImagesSchema = defineType({
   fields: [
     defineField({
       name: "home",
-      title: "Home Page Hero Image",
+      title: "Home Page Hero Images",
       type: "image",
-      options: {
-        hotspot: true,
-      },
+      options: { hotspot: true },
     }),
     defineField({
       name: "about",
-      title: "About Page Hero Image",
+      title: "About Page Hero Images",
       type: "image",
-      options: {
-        hotspot: true,
-      },
+      options: { hotspot: true },
     }),
     defineField({
       name: "projects",
-      title: "Projects Page Hero Image",
+      title: "Projects Page Hero Images",
       type: "image",
-      options: {
-        hotspot: true,
-      },
+      options: { hotspot: true },
     }),
     defineField({
       name: "contact",
-      title: "Contact Page Hero Image",
+      title: "Contact Page Hero Images",
       type: "image",
-      options: {
-        hotspot: true,
-      },
+      options: { hotspot: true },
     }),
   ],
 });

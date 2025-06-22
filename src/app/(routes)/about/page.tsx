@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 
 import AboutBanner from "./_components/banner";
-import VideoIntro from "./_components/video-intro";
 import SharedField from "../_components/shared-field";
 import Inventories from "./_components/inventories";
 import { sanityFetch } from "@/sanity/lib/live";
@@ -36,9 +35,9 @@ export default async function AboutPage() {
   return (
     <div className="h-full">
       <AboutBanner />
-      <div className="from-secondary/50 via-secondary/20 to-background bg-gradient-to-b">
+      {/* <div className="from-secondary/50 via-secondary/20 to-background bg-gradient-to-b">
         <VideoIntro />
-      </div>
+      </div> */}
       <SharedField title="Professional Experience" type="experiences" />
       <div className="from-secondary/50 via-secondary/20 to-background bg-gradient-to-b">
         <Inventories

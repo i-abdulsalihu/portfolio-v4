@@ -6,7 +6,6 @@ import { experienceSchema } from "./(schema)/experience.schema";
 import { initiativeSchema } from "./(schema)/initiatives.schema";
 import { techStackSchema } from "./(schema)/techStack.schema";
 import { heroImagesSchema } from "./(schema)/heroImage.schema";
-import { achievementSchema } from "./(schema)/achievement.schema";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -14,7 +13,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     educationSchema,
     experienceSchema,
     initiativeSchema,
-    achievementSchema,
     techStackSchema,
     heroImagesSchema,
   ],
