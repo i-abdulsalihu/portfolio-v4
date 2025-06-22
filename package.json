@@ -1,33 +1,40 @@
 {
   "name": "portfolio-v4",
   "version": "0.1.0",
-  "private": true,
-  "description": "Abdullahi Salihu's portfolio v4 built with Next.js, React, and Sanity.",
+  "private": false,
+  "description": "Holiday's developer portfolio—frontend interfaces for Web2 and Web3 using Next.js, React, TypeScript, and Sanity.",
   "author": {
     "name": "Abdullahi Salihu",
-    "url": "https://github.com/i-abdulsalihu"
+    "url": "https://abdulsalihu.vercel.app"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/i-abdulsalihu/portfolio-v4"
+  },
+  "homepage": "https://abdulsalihu.vercel.app",
+  "bugs": {
+    "url": "https://github.com/i-abdulsalihu/portfolio-v4/issues"
   },
   "keywords": [
     "portfolio",
     "frontend developer",
     "web3 developer",
-    "web3 portfolio",
-    "nextjs developer",
-    "react developer",
-    "typescript developer",
-    "sanity cms",
-    "tailwind css",
-    "web3 frontend",
+    "blockchain",
+    "dapp",
+    "solidity frontend",
+    "nextjs",
+    "react",
+    "typescript",
+    "tailwind",
+    "sanity",
+    "smart contracts",
+    "developer portfolio",
+    "web3",
+    "fullstack",
+    "UI engineer",
     "decentralized apps",
-    "blockchain developer",
-    "smart contract frontend",
-    "nextjs portfolio",
-    "react portfolio",
-    "modern web developer",
-    "UI developer",
-    "solidity frontend integration",
-    "fullstack developer portfolio",
-    "freelance web3 developer"
+    "freelance developer"
   ],
   "scripts": {
     "dev": "next dev",
