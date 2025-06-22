@@ -5,9 +5,25 @@ import SharedField from "../_components/shared-field";
 import Inventories from "./_components/inventories";
 import { sanityFetch } from "@/sanity/lib/live";
 import { groupStacksByCategory } from "@/lib/utils";
+import { siteConfig } from "@/config/site.config";
 
 export const metadata: Metadata = {
-  title: "Information",
+  title: siteConfig.about.title,
+  description: siteConfig.about.description,
+  openGraph: {
+    title: siteConfig.about.title,
+    description: siteConfig.about.description,
+    url: siteConfig.url,
+    type: "website",
+    siteName: siteConfig.about.title,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.about.title,
+    description: siteConfig.about.description,
+    creator: siteConfig.handle,
+    site: siteConfig.handle,
+  },
 };
 
 export default async function AboutPage() {

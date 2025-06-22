@@ -3,9 +3,25 @@ import ProjectsBanner from "./_components/banner";
 import Display from "./_components/display";
 import { sanityFetch } from "@/sanity/lib/live";
 import { projectQuery } from "@/lib/queries";
+import { siteConfig } from "@/config/site.config";
 
 export const metadata: Metadata = {
-  title: "Things I've Built",
+  title: siteConfig.projects.title,
+  description: siteConfig.projects.description,
+  openGraph: {
+    title: siteConfig.projects.title,
+    description: siteConfig.projects.description,
+    url: siteConfig.url,
+    type: "website",
+    siteName: siteConfig.projects.title,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.projects.title,
+    description: siteConfig.projects.description,
+    creator: siteConfig.handle,
+    site: siteConfig.handle,
+  },
 };
 
 export default async function ProjectsPage() {

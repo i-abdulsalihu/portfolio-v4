@@ -6,22 +6,27 @@ const siteUrl = assertValue(
 );
 
 export const siteConfig = {
-  title: "Abdullahi Salihu",
-  description:
-    "I’m Holiday. I build Web2 & Web3 Frontends that are usable, fast, and seamless.",
-
-  //? OPEN GRAPH METADATA
-  ogTitle: "Abdullahi Salihu",
-  ogDescription:
-    "I’m Holiday. I build Web2 & Web3 Frontends that are usable, fast, and seamless.",
-
-  //? TWITTER METADATA
-  tCard: "summary_large_image",
-  tTitle: "Abdullahi Salihu",
-  tDescription:
-    "I’m Holiday. I build Web2 & Web3 Frontends that are usable, fast, and seamless.",
-  twitterHandle: "@i_abdulsalihu",
-
+  default: {
+    title: "Web3 Frontend Developer",
+    description:
+      "Providing frontend solutions that connect smoothly with smart contracts. I specialise on scalable, maintainable architectures for both Web2 and Web3 environments.",
+  },
+  about: {
+    title: "Code, Context, Craft",
+    description:
+      "A deeper look into my technical background, tools of choice, and the mindset I bring to Frontend Development in the Blockchain ecosystem and beyond.",
+  },
+  projects: {
+    title: "Proof of Work",
+    description:
+      "A selected collection of Web2 and Web3 projects showcasing practical uses of smart contract interaction, UI performance, and interface design.",
+  },
+  contact: {
+    title: "Open to Collaborate",
+    description:
+      "Whether it's product development, technical consultancy, or interface design for dApps (Decentralized Applications), I'm open to new opportunities and challenges.",
+  },
   url: siteUrl,
+  handle: "i_abdulsalihu",
   favicon: "/images/logo-white-tb.png",
 };

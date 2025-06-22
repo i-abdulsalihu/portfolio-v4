@@ -9,27 +9,23 @@ import { SanityLive } from "@/sanity/lib/live";
 
 export const metadata: Metadata = {
   title: {
-    template: `%s • ${siteConfig.title}`,
-    default: siteConfig.title,
+    template: `%s • ${siteConfig.default.title}`,
+    default: siteConfig.default.title,
   },
-  description: siteConfig.description,
+  description: siteConfig.default.description,
   openGraph: {
-    title: siteConfig.ogTitle,
-    description: siteConfig.ogDescription,
+    title: siteConfig.default.title,
+    description: siteConfig.default.description,
     url: siteConfig.url,
     type: "website",
-    siteName: siteConfig.title,
+    siteName: siteConfig.default.title,
   },
   twitter: {
-    card: (siteConfig.tCard ?? "summary_large_image") as
-      | "summary_large_image"
-      | "summary"
-      | "player"
-      | "app",
-    title: siteConfig.tTitle,
-    description: siteConfig.tDescription,
-    creator: siteConfig.twitterHandle,
-    site: siteConfig.twitterHandle,
+    card: "summary_large_image",
+    title: siteConfig.default.title,
+    description: siteConfig.default.description,
+    creator: siteConfig.handle,
+    site: siteConfig.handle,
   },
   icons: {
     icon: {

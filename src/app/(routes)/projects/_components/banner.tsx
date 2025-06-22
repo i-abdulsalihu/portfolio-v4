@@ -1,12 +1,13 @@
+import { siteConfig } from "@/config/site.config";
 import Hero from "../../_components/hero";
 
 const ProjectsBanner = () => {
   return (
     <Hero
       src="/images/project-hero.jpg"
-      subtitle="Check out things i've built."
+      subtitle={siteConfig.projects.title}
       title="Where code and design collide — A showcase of my work."
-      description="Explore a variety of my projects that demonstrate my experience in developing responsive, interactive, and effective online apps that are visually appealing and solve problems."
+      description={siteConfig.projects.description}
     />
   );
 };
