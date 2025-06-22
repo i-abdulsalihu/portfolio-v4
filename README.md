@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Portfolio v4 — Abdullahi Salihu
 
-## Getting Started
+Personal portfolio showcasing Web2 and Web3 frontend development work. Built with Next.js 15, React 19, TypeScript, Tailwind CSS, and Sanity CMS.
 
-First, run the development server:
+Features
+• App Router (Next.js 15)
+• Server Actions & Streaming
+• Type-safe forms with react-hook-form and zod
+• Theme support via next-themes
+• Motion using framer-motion and gsap
+• CMS-backed content via Sanity Studio v3
+• Optimized SEO, metadata, and Open Graph config
+• Responsive, accessible UI with Radix UI
 
-```bash
+Getting Started
+
+Clone the repo and install dependencies:
+
+git clone https://github.com/i-abdulsalihu/portfolio-v4.git
+cd portfolio-v4
+
+# Install with your preferred package manager
+
+npm install
+
+# or
+
+yarn
+
+# or
+
+pnpm install
+
+# or
+
+bun install
+
+Run the development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 to view it in the browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Edit the content in app/, components in components/, and Sanity content in the connected Studio.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Environment Variables
 
-## Learn More
+Create a .env.local file in the root:
 
-To learn more about Next.js, take a look at the following resources:
+GMAIL_HOST=<your_gmail_host>
+GMAIL_USER=<your_gmail_address>
+GMAIL_PASS=<your_gmail_password>
+DEMO_MAILTRAP=<mailtrap_url>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+SANITY_API_READ_TOKEN=<your_sanity_token>
+NEXT_PUBLIC_SANITY_PROJECT_ID=<your_sanity_project_id>
+NEXT_PUBLIC_SANITY_DATASET=<your_sanity_dataset> # development or production
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+NEXT_PUBLIC_BASE_URL=<your_site_url>
 
-## Deploy on Vercel
+Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Deployed on Vercel. See Next.js deployment docs for configuration steps.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+License
+
+MIT
+
+⸻
+
+Built by Holiday
