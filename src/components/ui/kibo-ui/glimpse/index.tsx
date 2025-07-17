@@ -70,6 +70,7 @@ export const GlimpseImage = ({
       alt={alt ?? ""}
       src={imgSrc}
       onError={() => setImgSrc(fallbackSrc)}
+      loading="eager"
       className={cn(
         "mb-4 aspect-[120/63] w-full rounded-2xl border object-cover",
         className,

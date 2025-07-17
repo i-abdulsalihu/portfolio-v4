@@ -8,6 +8,7 @@ import { Fragment, useEffect, useRef } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+import Cursor from "@/components/shared/cursor";
 import { Toaster } from "@/components/ui/sonner";
 import LogoProvider from "@/components/provider/logo.provider";
 import ThemeProvider from "@/components/provider/theme.provider";
@@ -42,6 +43,7 @@ const GlobalProvider: FC<GlobalProviderProps> = ({ children }) => {
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       <SpeedInsights />
       <Analytics />
+      <Cursor />
       <LogoProvider>
         <NextJsToploader
           color="var(--primary)"
