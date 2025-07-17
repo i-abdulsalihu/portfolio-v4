@@ -9,13 +9,9 @@ const HomeBanner = () => {
   return (
     <Hero
       src="/images/hero-img.png"
+      message="Introduction"
       subtitle="Hey there! Good to see you."
-      title={
-        <span>
-          I&apos;m Abdullahi Salihu, <br className="hidden md:block" /> a
-          Frontend Developer from Nigeria.
-        </span>
-      }
+      title="I'm Abdullahi Salihu, a Web3 Frontend Eng. from Nigeria."
       actions={
         <Fragment>
           <Link

@@ -146,14 +146,16 @@ const ContactForm = () => {
             className="group ml-auto w-max sm:ml-0"
           >
             <Button
-              variant={"default"}
               size={"lg"}
+              variant={"outline"}
               disabled={isSubmitting}
               isLoading={isSubmitting}
               loadingText="Please hold..."
-              className="group rounded-lg"
+              className="!px-5"
             >
-              <span className="tracking-wide">Submit Details</span>
+              <span className="text-xs font-medium uppercase">
+                Submit Details
+              </span>
               <LuArrowRight className="!size-4 -rotate-45 transition duration-200 group-hover:rotate-0" />
             </Button>
           </MotionTrigger>

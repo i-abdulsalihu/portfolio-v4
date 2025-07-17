@@ -4,6 +4,7 @@ import { FC, useEffect } from "react";
 import { motion, useAnimation } from "motion/react";
 import { staggerAnimation } from "@/lib/constants";
 import { useInView } from "react-intersection-observer";
+import { cn } from "@/lib/utils";
 
 interface TriggerProps extends React.ComponentProps<typeof motion.div> {
   children: React.ReactNode;
@@ -35,7 +36,7 @@ const MotionTrigger: FC<TriggerProps> = ({
       whileInView="animate"
       viewport={{ once: true }}
       custom={custom}
-      className={className}
+      className={cn("", className)}
       {...props}
     >
       {children}

@@ -52,7 +52,7 @@ const Display: FC<DisplayProps> = ({ projects }) => {
             {triggers.map((trigger, index) => (
               <TabsTrigger
                 key={index}
-                className="cursor-pointer"
+                className="cursor-none"
                 value={trigger.value}
               >
                 <trigger.icon className="!size-4" />
@@ -66,7 +66,11 @@ const Display: FC<DisplayProps> = ({ projects }) => {
           <TabsContent value="grid">
             <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
               {projects.map((project, index) => (
-                <MotionTrigger key={index} custom={index}>
+                <MotionTrigger
+                  key={index}
+                  custom={index}
+                  className="cursor-none"
+                >
                   <ProjectCard project={project} />
                 </MotionTrigger>
               ))}
@@ -78,7 +82,7 @@ const Display: FC<DisplayProps> = ({ projects }) => {
                 <MotionTrigger
                   key={index}
                   custom={index}
-                  className="border-b last-of-type:border-b-0"
+                  className="cursor-none border-b last-of-type:border-b-0"
                 >
                   <ProjectList
                     project={project}
@@ -95,7 +99,7 @@ const Display: FC<DisplayProps> = ({ projects }) => {
 
       <div className="grid w-full grid-cols-1 gap-6 md:hidden md:grid-cols-2 md:gap-8">
         {projects.map((project, index) => (
-          <MotionTrigger key={index} custom={index}>
+          <MotionTrigger key={index} custom={index} className="cursor-none">
             <ProjectCard project={project} />
           </MotionTrigger>
         ))}

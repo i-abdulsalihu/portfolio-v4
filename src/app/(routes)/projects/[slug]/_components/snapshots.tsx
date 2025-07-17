@@ -45,11 +45,14 @@ const Snapshots: FC<SnapshotsProps> = ({ snapshots }) => {
             const snapshotUrl = snapshot ? urlFor(snapshot)?.url() : null;
 
             return (
-              <a href={snapshotUrl ?? "/svg/placeholder.svg"} key={index}>
-                <div
-                  data-cursor="pointer"
-                  className="group dark:bg-secondary shadow-foreground/15 relative mb-4 w-full break-inside-avoid overflow-hidden rounded-[30px] border p-1 shadow-lg transition-all duration-300 dark:shadow-black"
-                >
+              <a
+                key={index}
+                href={snapshotUrl ?? "/svg/placeholder.svg"}
+                className="cursor-none"
+                data-cursor="pointer"
+                role="button"
+              >
+                <div className="group dark:bg-secondary shadow-foreground/15 relative mb-4 w-full break-inside-avoid overflow-hidden rounded-[30px] border p-1 shadow-lg transition-all duration-300 md:cursor-none dark:shadow-black">
                   <div className="group bg-secondary relative overflow-hidden rounded-[25px]">
                     <Img
                       src={snapshotUrl ?? "/svg/placeholder.svg"}

@@ -17,7 +17,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Region from "./region";
 import { siteConfig } from "@/config/site.config";
@@ -41,9 +41,8 @@ const NavMenu = () => {
       <SheetTrigger title={isMenuOpen ? "Menu Opened" : "Menu Closed"}>
         <MotionTrigger
           y={0}
-          role="button"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="group relative ml-auto flex size-11 cursor-pointer items-center justify-center sm:size-10"
+          className="group relative ml-auto flex size-11 items-center justify-center sm:size-10 md:!cursor-none"
         >
           {isMenuOpen ? (
             <IoClose
@@ -101,29 +100,28 @@ const NavMenu = () => {
                 (link.path !== "/" && pathname.startsWith(link.path));
 
               return (
-                <Link
-                  key={link.path}
-                  data-cursor="pointer"
-                  href={link.path}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="group flex items-center justify-between gap-6 py-2.5 text-xl font-normal sm:py-3 sm:text-2xl"
-                >
-                  <span
-                    role="button"
-                    data-cursor="pointer"
-                    className="capitalize"
+                <SheetClose asChild key={link.path}>
+                  <Link
+                    href={link.path}
+                    className="group flex items-center justify-between gap-6 py-2.5 text-xl font-normal sm:py-3 sm:text-2xl md:cursor-none"
                   >
-                    {link.label}
-                  </span>
-                  <span
-                    className={cn(
-                      "border-primary size-2.5 scale-0 rounded-full border transition-all duration-300 group-hover:scale-100",
-                      {
-                        "bg-primary scale-100": isActive,
-                      },
-                    )}
-                  />
-                </Link>
+                    <span
+                      role="button"
+                      data-cursor="pointer"
+                      className="capitalize"
+                    >
+                      {link.label}
+                    </span>
+                    <span
+                      className={cn(
+                        "border-primary size-2.5 scale-0 rounded-full border transition-all duration-300 group-hover:scale-100",
+                        {
+                          "bg-primary scale-100": isActive,
+                        },
+                      )}
+                    />
+                  </Link>
+                </SheetClose>
               );
             })}
           </div>
@@ -133,13 +131,18 @@ const NavMenu = () => {
               <Region />
             </div>
             {process.env.NODE_ENV === "development" && (
-              <Link href="/studio" target="_blank" className="mt-2">
-                <SheetClose asChild>
-                  <Button size="lg" className="w-full">
-                    Open Sanity CMS
-                  </Button>
-                </SheetClose>
-              </Link>
+              <SheetClose asChild>
+                <Link
+                  href="/studio"
+                  target="_blank"
+                  className={buttonVariants({
+                    className: "mt-2 w-full md:cursor-none",
+                    size: "lg",
+                  })}
+                >
+                  Open Sanity CMS
+                </Link>
+              </SheetClose>
             )}
           </div>
         </div>

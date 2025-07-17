@@ -1,26 +1,44 @@
 import Link from "next/link";
 import type { FC } from "react";
 import { LuCornerLeftUp } from "react-icons/lu";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import Magnet from "@/components/shared/magnet";
+import {
+  Announcement,
+  AnnouncementTag,
+  AnnouncementTitle,
+} from "@/components/ui/kibo-ui/announcement";
 
-const Heading: FC<HeadingProps> = ({ title, subtitle, description, back }) => {
+const Heading: FC<HeadingProps> = ({
+  title,
+  subtitle,
+  description,
+  message,
+  back,
+}) => {
   return (
     <div className="mt-auto flex flex-col gap-4 sm:gap-6 md:gap-8">
       <div className="flex flex-col gap-2 sm:gap-3">
         {subtitle ? (
-          <p className="text-xs font-medium tracking-wide uppercase sm:text-sm">
-            {subtitle}
-          </p>
+          <Magnet padding={5} magnetStrength={15} className="w-max">
+            <Announcement className="md:!cursor-none">
+              {message && <AnnouncementTag>{message}</AnnouncementTag>}
+              <AnnouncementTitle>{subtitle}</AnnouncementTitle>
+            </Announcement>
+          </Magnet>
         ) : (
           back && (
-            <Link href="/projects">
-              <Button variant="link" className="w-max px-0">
-                <LuCornerLeftUp className="size-4" />
-
-                <span className="text-xs font-medium tracking-wide uppercase">
-                  Back to Projects
-                </span>
-              </Button>
+            <Link
+              href="/projects"
+              className={buttonVariants({
+                className: "!w-max !px-0 md:!cursor-none",
+                variant: "link",
+              })}
+            >
+              <LuCornerLeftUp className="size-4" />
+              <span className="text-xs font-medium tracking-wide uppercase">
+                Back to Projects
+              </span>
             </Link>
           )
         )}

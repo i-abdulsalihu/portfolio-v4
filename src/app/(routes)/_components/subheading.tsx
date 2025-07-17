@@ -16,9 +16,7 @@ const Subheading: FC<SubheadingProps> = ({ title, subtitle, path }) => {
             variant={"link"}
             className="group !flex !h-fit !w-max !items-center !gap-2 !p-0 !tracking-wide"
           >
-            <span className="text-sm font-medium tracking-wide">
-              {subtitle}
-            </span>
+            <span className="text-xs font-medium uppercase">{subtitle}</span>
             <LuArrowRight className="!size-4 -rotate-45 transition duration-200 group-hover:rotate-0" />
           </Button>
         </Link>

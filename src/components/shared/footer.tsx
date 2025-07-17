@@ -1,80 +1,57 @@
 import Link from "next/link";
+import * as React from "react";
 import Image from "next/image";
 
 import Logo from "./logo";
 import { Wrapper } from "./wrapper";
-import { siteConfig } from "@/config/site.config";
+import { socials } from "@/lib/constants";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import MotionTrigger from "./trigger";
 import Magnet from "./magnet";
 
-const footerLinks = [
-  {
-    label: "X (Twitter)",
-    title: "Follow me on X",
-    url: "https://x.com/i_abdulsalihu",
-    icon: "/svg/socials/twitter-x.svg",
-  },
-  {
-    label: "LinkedIn",
-    title: "Connect with me on LinkedIn",
-    url: "https://www.linkedin.com/mynetwork/discovery-see-all/?usecase=PEOPLE_FOLLOWS&followMember=abdullahisalihu",
-    icon: "/svg/socials/linkedin.svg",
-  },
-  {
-    label: "Facebook",
-    title: "Join the conversation on Facebook",
-    url: "https://web.facebook.com/i.abdulsalihu",
-    icon: "/svg/socials/facebook.svg",
-  },
-  {
-    label: "Telegram",
-    title: "Message me on Telegram",
-    url: "https://t.me/i_abdulsalihu",
-    icon: "/svg/socials/telegram.svg",
-  },
-  {
-    label: "Instagram",
-    title: "Catch up with me on Instagram",
-    url: "https://www.instagram.com/i_abdulsalihu",
-    icon: "/svg/socials/instagram.svg",
-  },
-];
-
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer className="flex flex-col">
       <Wrapper className="grid grid-cols-1 gap-4 py-8 sm:!py-10 md:grid-cols-2">
         <div className="flex items-center justify-center md:justify-start">
-          <Link
-            href="/"
-            className="size-max md:-ml-2"
-            title={`Logo - ${siteConfig.author}`}
-          >
+          <Link href="/" className="size-max md:-ml-2 md:!cursor-none">
             <Logo className="!size-14 sm:!size-10" />
           </Link>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-2 md:justify-end">
-          {footerLinks.map((link, index) => (
-            <MotionTrigger y={10} custom={index} key={link.label}>
+        <div className="flex flex-wrap items-center justify-center gap-1 md:justify-end">
+          {socials.map((social, index) => (
+            <MotionTrigger y={10} custom={index} key={social.label}>
               <Magnet padding={10} magnetStrength={5}>
-                <Link
-                  target="_blank"
-                  href={link.url}
-                  title={link.title}
-                  className="group flex cursor-pointer items-center"
-                  data-cursor="pointer"
-                >
-                  <Image
-                    src={link.icon}
-                    alt={link.title}
-                    width={44}
-                    height={44}
-                    priority
-                    quality={100}
-                    className="pointer-events-none size-12 select-none sm:size-11"
-                  />
-                </Link>
+                <Tooltip>
+                  <TooltipTrigger type="button">
+                    <Link
+                      target="_blank"
+                      href={social.url}
+                      className="group flex items-center md:!cursor-none"
+                      data-cursor="pointer"
+                    >
+                      <Image
+                        src={social.icon}
+                        alt={social.title}
+                        width={44}
+                        height={44}
+                        loading="eager"
+                        quality={100}
+                        className="pointer-events-none size-12 select-none sm:size-11"
+                      />
+                    </Link>
+                    <p className="sr-only">{social.label}</p>
+                  </TooltipTrigger>
+                  <TooltipContent side="top">
+                    <p className="sr-only">{social.title}</p>
+                    <p className="text-xs font-medium">{social.title}</p>
+                  </TooltipContent>
+                </Tooltip>
               </Magnet>
             </MotionTrigger>
           ))}
@@ -83,5 +60,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

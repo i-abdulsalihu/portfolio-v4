@@ -18,10 +18,10 @@ export default async function Home() {
         <Featured projects={projects} />
       </div>
       <SharedField
-        title="Ongoing Initiatives"
+        title="Academic background"
         path="/about"
         subtitle="Details about myself"
-        type="initiatives"
+        type="educations"
         limit={1}
       />
     </div>

@@ -2,22 +2,29 @@
 
 import Link from "next/link";
 import { useTheme } from "next-themes";
+import { usePathname } from "next/navigation";
 import Image, { ImageProps } from "next/image";
 import { useEffect, useState, type FC } from "react";
 
 import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
-import MotionTrigger from "@/components/shared/trigger";
-import { Button } from "@/components/ui/button";
+  Glimpse,
+  GlimpseContent,
+  GlimpseDescription,
+  GlimpseImage,
+  GlimpseTitle,
+  GlimpseTrigger,
+} from "@/components/ui/kibo-ui/glimpse";
 import { urlFor } from "@/sanity/lib/image";
-import { useIsMobile } from "@/hooks/mobile";
-import { usePathname } from "next/navigation";
+import MotionTrigger from "@/components/shared/trigger";
 
 interface StackItemProps {
-  stack: InventoryProps;
+  stack: InventoryProps & {
+    metadata?: {
+      title: string | null;
+      description: string | null;
+      image: string | null;
+    };
+  };
   index: number;
 }
 
@@ -47,11 +54,9 @@ const ThemeImage: React.FC<ThemeImageProps> = ({
 };
 
 const StackItem: FC<StackItemProps> = ({ stack, index }) => {
-  const isMobile = useIsMobile();
-
   const content = (
     <MotionTrigger custom={index}>
-      <div className="group bg-secondary relative flex aspect-square w-full cursor-pointer flex-col items-center justify-center gap-1.5 px-1 py-2 md:gap-2">
+      <div className="group bg-secondary relative flex aspect-square w-full flex-col items-center justify-center gap-1.5 px-1 py-2 md:!cursor-none md:gap-2">
         {Array.from({ length: 4 }).map((_, i) => (
           <span
             key={i}
@@ -76,49 +81,27 @@ const StackItem: FC<StackItemProps> = ({ stack, index }) => {
     </MotionTrigger>
   );
 
-  if (isMobile) {
-    return (
-      <Link href={stack.url ?? "#"} key={index} target={stack.url && "_blank"}>
-        {content}
-      </Link>
-    );
-  }
-
   return (
-    <HoverCard key={index}>
-      <HoverCardTrigger asChild>{content}</HoverCardTrigger>
-      <HoverCardContent className="w-96">
-        <div className="flex justify-between space-x-4">
-          <div className="pointer-events-none relative size-10 origin-top object-contain transition-transform duration-300 lg:scale-110 lg:group-hover:scale-75 xl:scale-100">
-            <ThemeImage
-              lightSrc={stack.icon}
-              darkSrc={stack.iconDark || stack.icon}
-              alt={stack.label}
-              width={32}
-              height={32}
-              priority
-              quality={100}
-            />
-          </div>
-          <div className="flex flex-1 flex-col space-y-1">
-            <p className="text-base font-semibold">{stack.label}</p>
-            {stack.description && (
-              <p className="text-sm">{stack.description}</p>
-            )}
-            {stack.url && (
-              <Link href={stack.url} target="_blank" title={stack.label}>
-                <Button
-                  variant="link"
-                  className="mt-4 ml-auto !h-0 !p-0 !text-xs"
-                >
-                  Check it out
-                </Button>
-              </Link>
-            )}
-          </div>
-        </div>
-      </HoverCardContent>
-    </HoverCard>
+    <Glimpse closeDelay={0} openDelay={0} key={index}>
+      <GlimpseTrigger asChild>
+        <Link
+          href={stack.url ?? "#"}
+          key={index}
+          target={stack.url && "_blank"}
+        >
+          {content}
+        </Link>
+      </GlimpseTrigger>
+      <GlimpseContent className="w-80">
+        {stack.metadata?.image && (
+          <GlimpseImage src={stack.metadata.image} loading="eager" />
+        )}
+        <GlimpseTitle>{stack.metadata?.title || stack.label}</GlimpseTitle>
+        <GlimpseDescription className="line-clamp-3 text-xs">
+          {stack.metadata?.description || stack.description}
+        </GlimpseDescription>
+      </GlimpseContent>
+    </Glimpse>
   );
 };
 

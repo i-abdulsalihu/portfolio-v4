@@ -43,7 +43,7 @@ export default function RootLayout({
     <html lang="en" suppressContentEditableWarning suppressHydrationWarning>
       <body
         className={cn(
-          "bg-background flex min-h-screen flex-col antialiased",
+          "bg-background flex min-h-screen flex-col antialiased md:!cursor-none",
           fontSans.variable,
           fontSerif.variable,
         )}

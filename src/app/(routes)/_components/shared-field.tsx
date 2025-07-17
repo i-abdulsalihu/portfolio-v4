@@ -1,4 +1,5 @@
 import { FC } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { HiOutlineDownload } from "react-icons/hi";
 import { PortableText, PortableTextMarkComponentProps } from "next-sanity";
@@ -9,20 +10,45 @@ import { sharedAboutQuery } from "@/lib/queries";
 import { Wrapper } from "@/components/shared/wrapper";
 import MotionTrigger from "@/components/shared/trigger";
 import Subheading from "@/app/(routes)/_components/subheading";
-import Link from "next/link";
+import { glimpse } from "@/components/ui/kibo-ui/glimpse/server";
+import {
+  Glimpse,
+  GlimpseContent,
+  GlimpseDescription,
+  GlimpseImage,
+  GlimpseTitle,
+  GlimpseTrigger,
+} from "@/components/ui/kibo-ui/glimpse";
 
 const components = {
   marks: {
-    link: ({ value, children }: PortableTextMarkComponentProps<any>) => {
+    link: async ({ value, children }: PortableTextMarkComponentProps<any>) => {
       const { href, blank } = value;
+      const data = await glimpse(href);
+
       return (
-        <a
-          href={href}
-          target={blank ? "_blank" : "_self"}
-          rel={blank ? "noopener noreferrer" : undefined}
-        >
-          {children}
-        </a>
+        <Glimpse closeDelay={0} openDelay={0}>
+          <GlimpseTrigger asChild>
+            <a
+              href={href}
+              target={blank ? "_blank" : "_self"}
+              rel={blank ? "noopener noreferrer" : undefined}
+              className="md:!cursor-none"
+            >
+              {children}
+            </a>
+          </GlimpseTrigger>
+          <GlimpseContent className="w-80">
+            {data.image && (
+              <GlimpseImage
+                src={data.image as string}
+                alt={data.title as string}
+              />
+            )}
+            <GlimpseTitle>{data.title}</GlimpseTitle>
+            <GlimpseDescription>{data.description}</GlimpseDescription>
+          </GlimpseContent>
+        </Glimpse>
       );
     },
   },
@@ -110,7 +136,7 @@ const SharedField: FC<SharedFieldProps> = async ({
             </div>
 
             {documents && documents?.length > 0 && (
-              <div className="grid grid-cols-2 gap-x-0.5 gap-y-1.5 sm:!gap-0 lg:grid-cols-3">
+              <div className="grid max-w-xs grid-cols-2 gap-x-0.5 gap-y-1.5 sm:!gap-0">
                 {documents.map((document, index) => (
                   <Link
                     target="_blank"
@@ -121,7 +147,7 @@ const SharedField: FC<SharedFieldProps> = async ({
                     <Image
                       src="/svg/certificate.svg"
                       alt={title}
-                      width={1200}
+                      width={1100}
                       height={800}
                       priority
                       quality={100}

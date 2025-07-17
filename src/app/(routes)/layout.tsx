@@ -1,7 +1,7 @@
 import { Fragment, ReactNode } from "react";
 
-import Header from "@/components/shared/header";
-import Footer from "@/components/shared/footer";
+import { Header } from "@/components/shared/header";
+import { Footer } from "@/components/shared/footer";
 import Cursor from "@/components/shared/cursor";
 
 export default function AppLayout({

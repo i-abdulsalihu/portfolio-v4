@@ -6,6 +6,8 @@ import Inventories from "./_components/inventories";
 import { sanityFetch } from "@/sanity/lib/live";
 import { groupStacksByCategory } from "@/lib/utils";
 import { siteConfig } from "@/config/site.config";
+import VideoIntro from "./_components/video-intro";
+import { glimpse } from "@/components/ui/kibo-ui/glimpse/server";
 
 export const metadata: Metadata = {
   title: siteConfig.about.title,
@@ -48,16 +50,28 @@ export default async function AboutPage() {
     return a.category.localeCompare(b.category);
   });
 
+  const hydratedResponse = await Promise.all(
+    sortedResponse.map(async ({ category, stacks }) => {
+      const hydratedStacks = await Promise.all(
+        stacks.map(async (stack) => {
+          const metadata = await glimpse(stack.url as string);
+          return { ...stack, metadata };
+        }),
+      );
+      return { category, stacks: hydratedStacks };
+    }),
+  );
+
   return (
     <div className="h-full">
       <AboutBanner />
-      {/* <div className="from-secondary/50 via-secondary/20 to-background bg-gradient-to-b">
+      <div className="from-secondary/50 via-secondary/20 to-background bg-gradient-to-b">
         <VideoIntro />
-      </div> */}
+      </div>
       <SharedField title="Professional Experience" type="experiences" />
       <div className="from-secondary/50 via-secondary/20 to-background bg-gradient-to-b">
         <Inventories
-          sortedResponse={sortedResponse}
+          sortedResponse={hydratedResponse}
           title="Stack Inventories"
         />
       </div>

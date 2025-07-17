@@ -17,7 +17,7 @@ export const siteConfig = {
       "A deeper look into my technical background, tools of choice, and the mindset I bring to Frontend Development in the Blockchain ecosystem and beyond.",
   },
   projects: {
-    title: "Proof of Work",
+    title: "Implementation Details",
     description:
       "A selected collection of Web2 and Web3 projects showcasing practical uses of smart contract interaction, UI performance, and interface design.",
   },

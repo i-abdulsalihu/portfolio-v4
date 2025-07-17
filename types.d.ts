@@ -3,6 +3,7 @@ declare type tImageModal = { active: boolean; index: number };
 declare interface HeadingProps {
   subtitle?: string;
   description?: string;
+  message?: string;
   title: ReactElement | string;
   back?: boolean;
 }

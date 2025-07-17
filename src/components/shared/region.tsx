@@ -1,14 +1,14 @@
 "use client";
 
-import { Fragment, useEffect, useState } from "react";
-
+import * as React from "react";
 import MotionTrigger from "./trigger";
 
 const Region = () => {
-  const [currentTime, setCurrentTime] = useState("");
-  const [currentRegion, setCurrentRegion] = useState("");
+  const [currentTime, setCurrentTime] = React.useState("");
+  const [currentDate, setCurrentDate] = React.useState("");
+  const [currentRegion, setCurrentRegion] = React.useState("");
 
-  useEffect(() => {
+  React.useEffect(() => {
     const updateTime = () => {
       const now = new Date();
 
@@ -18,43 +18,46 @@ const Region = () => {
         hour12: true,
       });
 
-      const timeZone = "Africa/Lagos";
+      const date = now.toLocaleDateString("en-GB", {
+        weekday: "short",
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      });
+
       const formatter = new Intl.DateTimeFormat("en-US", {
-        timeZone,
+        timeZone: "Africa/Lagos",
         timeZoneName: "shortOffset",
       });
 
-      const regionWithOffset = formatter
-        .formatToParts(now)
-        .reduce((acc, part) => {
-          if (part.type === "timeZoneName") {
-            return part.value;
-          }
-          return acc;
-        }, "");
+      const offset =
+        formatter
+          .formatToParts(now)
+          .find((part) => part.type === "timeZoneName")?.value || "";
 
-      setCurrentRegion(`West Africa Standard Time (${regionWithOffset})`);
+      setCurrentRegion(`WAT ${offset}`);
       setCurrentTime(time);
+      setCurrentDate(date);
     };
+
     updateTime();
-
     const intervalId = setInterval(updateTime, 1000);
-
     return () => clearInterval(intervalId);
   }, []);
 
   return (
     <MotionTrigger
       y={0}
-      className="flex flex-wrap items-center gap-x-2 text-xs font-normal sm:text-sm"
+      className="flex flex-wrap items-center gap-x-2 text-[13px] font-normal sm:text-sm"
     >
-      {!currentRegion || !currentTime ? (
+      {!currentRegion || !currentTime || !currentDate ? (
         <span className="tracking-wide">...</span>
       ) : (
-        <Fragment>
-          <span className="tracking-wide">{currentRegion}</span>
-          <span className="tracking-wide uppercase">{currentTime}</span>
-        </Fragment>
+        <span className="tracking-wide">
+          <time dateTime={new Date().toISOString()}>
+            {currentDate} {currentTime} {currentRegion}
+          </time>
+        </span>
       )}
     </MotionTrigger>
   );

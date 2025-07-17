@@ -28,6 +28,7 @@ const Logo: FC<LogoProps> = ({ className }) => {
           quality={100}
           className={cn("size-10", className)}
           title={`Logo - ${siteConfig.author}`}
+          unselectable="off"
         />
       </Magnet>
     </MotionTrigger>

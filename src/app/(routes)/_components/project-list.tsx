@@ -14,7 +14,7 @@ const ProjectList: FC<ProjectListProps> = ({ index, setModal, project }) => {
   return (
     <Link
       href={`/projects/${slug}`}
-      className="group hover:dark:bg-secondary/50 hover:bg-secondary relative flex h-full items-start gap-6 py-10 transition-all"
+      className="group hover:dark:bg-secondary/50 hover:bg-secondary relative flex h-full items-start gap-6 py-10 transition-all md:cursor-none"
       onMouseEnter={() => {
         setModal({ active: true, index });
       }}
