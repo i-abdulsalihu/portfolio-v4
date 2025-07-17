@@ -36,7 +36,7 @@ const VideoIntro = () => {
             slot="media"
             autoPlay
             loop
-            src="https://media.istockphoto.com/id/1400748146/video/coming-soon-message-coming-out-of-megaphone-communication-concept.mp4?s=mp4-640x640-is&k=20&c=Xnvz1yT67XafpfApldOC3NiDMuqQwasG1CPE0L0_zas="
+            src="https://cdn.pixabay.com/video/2018/11/26/19575-303404028_large.mp4"
           />
           <VideoPlayerControlBar>
             {controls.map(({ key, Component }) => (
