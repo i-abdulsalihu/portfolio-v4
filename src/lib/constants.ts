@@ -6,7 +6,7 @@ export const staggerAnimation = (y?: number) => ({
     transition: {
       delay: 0.05 * index,
       duration: 0.9,
-      type: "spring",
+      type: "spring" as const,
     },
   }),
 });
