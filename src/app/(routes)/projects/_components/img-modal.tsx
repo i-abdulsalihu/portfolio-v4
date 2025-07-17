@@ -12,19 +12,19 @@ interface ImgModalProps {
 }
 
 const scaleAnimation = {
-  initial: { scale: 0, x: "-50%", y: "-50%" },
+  initial: { scale: 0, x: "-50%" as const, y: "-50%" as const } as const,
   enter: {
     scale: 1,
-    x: "-50%",
-    y: "-50%",
-    transition: { duration: 0.3, ease: [0.76, 0, 0.24, 1] },
-  },
+    x: "-50%" as const,
+    y: "-50%" as const,
+    transition: { duration: 0.3, ease: [0.76, 0, 0.24, 1] } as const,
+  } as const,
   closed: {
     scale: 0,
-    x: "-50%",
-    y: "-50%",
-    transition: { duration: 0.3, ease: [0.32, 0, 0.67, 0] },
-  },
+    x: "-50%" as const,
+    y: "-50%" as const,
+    transition: { duration: 0.3, ease: [0.32, 0, 0.67, 0] } as const,
+  } as const,
 };
 
 const ImgModal: FC<ImgModalProps> = ({ modal, projects }) => {
