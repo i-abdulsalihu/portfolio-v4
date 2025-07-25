@@ -7,7 +7,7 @@ const siteUrl = assertValue(
 
 export const siteConfig = {
   default: {
-    title: "Web3 Frontend Developer",
+    title: "Web3 Frontend Engineer",
     description:
       "Providing frontend solutions that connect smoothly with smart contracts. I specialise on scalable, maintainable architectures for both Web2 and Web3 environments.",
   },
